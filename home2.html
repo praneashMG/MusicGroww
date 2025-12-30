@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en" class="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Music Artistry Site — Violet & Blue Theme</title>
+      <link rel="icon" href="growwpark_logo.jpg">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="·.¸¸.·♩♪♫ Font Style ♫♪♩·.¸¸.·" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .artist-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+    .artist-img { filter: grayscale(100%); transition: all 0.5s ease; }
+   
+  [dir="rtl"] #mobile-menu {
+    direction: rtl;
+  }
+
+/* ===============================
+   COMPLETE RTL SOLUTION FOR BOTH DESKTOP & MOBILE
+================================ */
+
+/* NAVBAR CONTAINER - Works for both desktop and mobile */
+[dir="rtl"] nav > .max-w-7xl {
+  flex-direction: row-reverse;
+}
+
+/* LOGO - Move to right in RTL */
+[dir="rtl"] nav > .max-w-7xl > a:first-child {
+  order: 2;
+  margin-left: auto;
+}
+
+/* DESKTOP MENU (md: and up) */
+@media (min-width: 768px) {
+  [dir="rtl"] #navbar-default > ul {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] #navbar-default {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  /* Desktop dropdown positioning */
+  [dir="rtl"] #homeMenu {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right;
+  }
+  
+  [dir="rtl"] #dashMenu {
+    right: auto !important;
+    left: 0 !important;
+    text-align: right;
+  }
+}
+
+/* MOBILE MENU */
+[dir="rtl"] #mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .mobile-toggle {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .arrow {
+  transform: rotate(180deg);
+  order: -1;
+}
+
+[dir="rtl"] #mobile-menu ul ul {
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
+  text-align: right;
+}
+
+/* Mobile hamburger button stays on left in RTL */
+[dir="rtl"] #menu-btn {
+  order: 1;
+}
+/* DEBUG STYLES - Remove after confirming RTL works */
+[dir="rtl"] nav > .max-w-7xl {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+[dir="rtl"] #mobile-menu {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+@media (max-width:800px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:800px){
+.register{
+  display:none;
+}
+}
+@media (max-width: 800px) {
+    #menu-btn {
+        display: block;
+        margin-left:450px;
+    }
+}
+@media (max-width: 800px) {
+    #rtl-toggle {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    #theme-toggle {
+        display: none;
+    }
+}
+@media (max-width: 1280px) {
+    .list li{
+        display: none !important;
+    }
+}
+@media (max-width: 1280px) {
+    .menu{
+       list-style-type: none;
+      margin-right: 50px;
+    }
+}
+@media (max-width:820px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:1440px){
+.links ul {
+  display:none;
+}
+}
+@media (max-width:1280px){
+    #navbar-default{
+        gap:25px;
+    }
+}
+@media (max-width: 1280px) {
+    #navbar-default {
+        gap: 17px;
+    }
+}
+
+  .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+
+  </style>
+</head>
+
+<body class=" pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-arial">
+
+<nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+    </a>
+
+    <!-- Hamburger button for mobile -->
+<button
+  id="menuBtn"
+  class="lg:hidden text-violet"
+>
+  ☰
+</button>
+
+    <!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="hidden lg:hidden absolute top-full left-0 w-full"
+>
+      <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
+        
+        <!-- Home submenu -->
+      <!-- Home submenu -->
+<li>
+  <button onclick="toggleSubMenu('homeSub')" class="mobile-toggle w-full flex items-center justify-between">
+    <span class="label">Home</span>
+    <span class="arrow rtl:rotate-180">▼</span>
+  </button>
+  <ul id="homeSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+      <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+  </ul>
+</li>
+
+        <!-- Other menu items -->
+              <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+
+        <!-- Dashboard submenu -->
+        <li>
+          <button onclick="toggleSubMenu('dashSub')" class="mobile-toggle w-full flex items-center justify-between">
+            <span class="label">Dashboard</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul id="dashSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+                   <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+        <!-- Theme & RTL toggles -->
+        <li>
+          <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            🌙 Dark / Light
+          </button>
+        </li>
+        <li>
+          <button id="mobile-rtl-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            RTL / LTR
+          </button>
+        </li>
+
+        <!-- New Sign Up & Login buttons for mobile -->
+        <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                <a href="register.html">Register</a>
+          </button>
+        </li>
+           <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                <a href="login.html">Login</a>
+          </button>
+        </li>
+       
+        
+
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
+     <div class="menu hidden md:flex items-center list-none gap-6" id="navbar-default">
+<ul class="list hidden lg:flex gap-4">
+  <!-- <li>Home</li>
+  <li>About</li> -->
+</ul>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('homeMenu')" class="hover:text-violet transition flex items-center gap-1">Home ▼</button>
+          <ul id="homeMenu" class="hidden absolute left-0 mt-3 w-40 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('dashMenu')" class="hover:text-violet transition flex items-center gap-1">Dashboard ▼</button>
+          <ul id="dashMenu" class="hidden absolute right-0 mt-3 w-44 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <!-- Theme & RTL toggles -->
+      <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1">🌙</button>
+      <button id="rtl-toggle" class="text-xs uppercase border px-2 py-1 rounded hover:bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:text-white dark:hover:bg-white dark:hover:text-black">RTL/LTR</button>
+
+      <!-- New Sign Up & Login buttons for desktop -->
+      <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Register</a>
+      <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+
+  
+    <style>
+        /* Dark mode (default) */
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --card-bg: rgba(49, 30, 59, 0.95);
+            --card-border: rgba(139, 92, 246, 0.2);
+            --muted-text: #94a3b8;
+            --hover-bg: rgba(255, 255, 255, 0.05);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: all 0.4s ease;
+        }
+        
+        /* Light mode */
+        body.light-mode {
+            --bg-color: #f0e4f9;
+            --text-color: #1e293b;
+            --card-bg: rgba(214, 191, 219, 0.95);
+            --card-border: rgba(203, 213, 225, 0.5);
+            --muted-text: #64748b;
+            --hover-bg: rgba(0, 0, 0, 0.05);
+        }
+        
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* .card-gradient {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        } */
+        
+        .card-gradient:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+        }
+        
+        .light-mode .card-gradient:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+        }
+        
+        .light-mode .glow-effect {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .light-mode .hover-lift:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+        
+        .hover-brighten {
+            transition: filter 0.3s ease;
+        }
+        
+        .hover-brighten:hover {
+            filter: brightness(1.2);
+        }
+        
+        .hover-underline {
+            position: relative;
+        }
+        
+        .hover-underline:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .hover-underline:hover:after {
+            width: 100%;
+        }
+        
+        .gradient-border {
+            position: relative;
+            border-radius: 0.75rem;
+        }
+        
+        .gradient-border:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+            border-radius: 0.875rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gradient-border:hover:before {
+            opacity: 1;
+        }
+        
+        .slide-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease forwards;
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .music-wave {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .music-wave:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            animation: wave 3s infinite linear;
+            z-index: 1;
+        }
+        
+        .light-mode .music-wave:after {
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.05), transparent);
+        }
+        
+        @keyframes wave {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        
+        /* Mode toggle button */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .mode-toggle:hover {
+            transform: scale(1.1) rotate(30deg);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mode-toggle i {
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.5s ease;
+        }
+        
+        .light-mode .mode-toggle i {
+            color: #1e293b;
+        }
+        
+        .mode-toggle .fa-sun {
+            display: none;
+        }
+        
+        .light-mode .mode-toggle .fa-sun {
+            display: block;
+        }
+        
+        .light-mode .mode-toggle .fa-moon {
+            display: none;
+        }
+        
+        /* Custom text color classes */
+        .text-muted {
+            color: var(--muted-text);
+        }
+        
+        .bg-hover {
+            background-color: var(--hover-bg);
+        }
+        
+        .hover-bg-hover:hover {
+            background-color: var(--hover-bg);
+        }
+        @media (max-width:2560px){
+            .name{
+              margin-right:20px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Component 1: Hero Section with Band Showcase -->
+        <section class="mb-20 slide-up">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="lg:w-1/2">
+                    <h1 class="heading-font text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Amplify Your <span class="gradient-text">Band's Artistry</span>
+                    </h1>
+                    <p class="text-xl mb-10 text-muted leading-relaxed">
+                        Groww connects musicians with audiences, venues, and opportunities. Showcase your band's unique sound, book gigs, and grow your fanbase like never before.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="gradient-border bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-semibold py-3 px-8 rounded-full hover-lift hover-brighten transition-all duration-300">
+                            <i class="fas fa-music mr-2"></i> Start Your Journey
+                        </button>
+                        <button class="border border-purple-500 text-purple-300 hover:bg-purple-900/30 font-semibold py-3 px-8 rounded-full hover-lift transition-all duration-300">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative slide-up delay-1">
+                    <div class="card-gradient rounded-2xl p-6 glow-effect hover-lift">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold">Featured Band of the Week</h3>
+                            <span class="bg-purple-900/50 text-purple-300 text-sm font-medium py-1 px-3 rounded-full hover-grow cursor-pointer">
+                                <i class="fas fa-fire mr-1"></i> Hot & Trending
+                            </span>
+                        </div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-purple-600/50 pulse-animation hover-grow">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Band" class="w-full h-full object-cover hover-grow transition-transform duration-500">
+                            </div>
+                            <div class="ml-6">
+                                <h4 class="text-2xl font-bold hover-underline inline-block">Midnight Echo</h4>
+                                <p class="text-muted">Alternative Rock • 4 Members</p>
+                                <div class="flex items-center mt-2">
+                                    <div class="flex text-amber-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="ml-2">4.7/5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-hover p-4 rounded-xl hover:bg-hover transition-colors duration-300">
+                                <p class="text-sm text-muted">Next Show</p>
+                                <p class="font-bold">July 15 • The Velvet Lounge</p>
+                            </div>
+                            <div class="bg-hover p-4 rounded-xl hover:bg-hover transition-colors duration-300">
+                                <p class="text-sm text-muted">Fan Growth</p>
+                                <p class="font-bold text-green-400">+1,234 <span class="text-sm">this month</span></p>
+                            </div>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white font-semibold py-3 rounded-lg hover-lift hover-brighten transition-all duration-300">
+                            <i class="fas fa-ticket-alt mr-2"></i> Book This Band
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 2: Artist Spotlight Carousel -->
+        <section class="mb-20 slide-up delay-2">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold">
+                    <i class="fas fa-star text-amber-400 mr-3"></i>
+                    Artist Spotlight
+                </h2>
+                <div class="flex space-x-2">
+                    <button class="w-10 h-10 rounded-full border border-purple-500 flex items-center justify-center hover-bg-hover transition-colors duration-300 hover-lift">
+                        <i class="fas fa-chevron-left">🎵</i>
+                    </button>
+                    <button class="w-10 h-10 rounded-full border border-purple-500 flex items-center justify-center hover-bg-hover transition-colors duration-300 hover-lift">
+                        <i class="fas fa-chevron-right">💽</i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-gradient rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-r from-purple-900/20 to-blue-900/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')] bg-cover bg-center opacity-30 group-hover:scale-110 transition-transform duration-700"></div>
+                        <div class="absolute top-4 right-4 bg-purple-700 text-white text-sm font-bold py-1 px-3 rounded-full hover-grow">
+                            Live Now
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-amber-500 group-hover:border-amber-400 transition-colors duration-300">
+                                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Artist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg hover-underline inline-block">Luna Rhythm</h4>
+                                <p class="text-sm text-muted">Indie Folk • Solo Artist</p>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">Acoustic folk with modern twists. Currently touring across the West Coast.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-400 font-bold">
+                                <i class="fas fa-headphones mr-1"></i> 4,892 listeners
+                            </span>
+                            <button class="text-purple-300 hover:text-white font-medium transition-colors duration-300 hover-underline">
+                                Follow <i class="fas fa-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-r from-amber-900/20 to-red-900/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')] bg-cover bg-center opacity-30 group-hover:scale-110 transition-transform duration-700"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-red-500 group-hover:border-red-400 transition-colors duration-300">
+                                <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Artist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg hover-underline inline-block">Electric Pulse</h4>
+                                <p class="text-sm text-muted">Synthwave • 3 Members</p>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">80s inspired synthwave with modern production. Just released new EP "Neon Dreams".</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-400 font-bold">
+                                <i class="fas fa-headphones mr-1"></i> 7,321 listeners
+                            </span>
+                            <button class="text-purple-300 hover:text-white font-medium transition-colors duration-300 hover-underline">
+                                Follow <i class="fas fa-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-2xl overflow-hidden hover-lift group">
+                    <div class="h-48 bg-gradient-to-r from-green-900/20 to-blue-900/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')] bg-cover bg-center opacity-30 group-hover:scale-110 transition-transform duration-700"></div>
+                        <div class="absolute top-4 right-4 bg-green-700 text-white text-sm font-bold py-1 px-3 rounded-full hover-grow">
+                            New Release
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-green-500 group-hover:border-green-400 transition-colors duration-300">
+                                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Artist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg hover-underline inline-block">Jazz Collective</h4>
+                                <p class="text-sm text-muted">Jazz Fusion • 5 Members</p>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">Modern jazz fusion with world music influences. Weekly residency at The Blue Note.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-400 font-bold">
+                                <i class="fas fa-headphones mr-1"></i> 5,642 listeners
+                            </span>
+                            <button class="text-purple-300 hover:text-white font-medium transition-colors duration-300 hover-underline">
+                                Follow <i class="fas fa-plus ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 3: Upcoming Events & Gigs -->
+        <section class="mb-20 slide-up delay-3">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-10">
+                <i class="fas fa-calendar-alt text-purple-400 mr-3"></i>
+                Upcoming Events & Gigs
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="card-gradient rounded-2xl p-8 hover-lift">
+                        <div class="flex flex-wrap items-center justify-between mb-8">
+                            <h3 class="text-2xl font-bold">This Week's Highlights</h3>
+                            <div class="flex space-x-2 mt-2 lg:mt-0">
+                                <button class="text-sm bg-purple-900/50 text-purple-300 py-2 px-4 rounded-full hover-bg-hover transition-colors duration-300">All</button>
+                                <button class="text-sm border border-gray-700 text-muted py-2 px-4 rounded-full hover-bg-hover transition-colors duration-300">Local</button>
+                                <button class="text-sm border border-gray-700 text-muted py-2 px-4 rounded-full hover-bg-hover transition-colors duration-300">Virtual</button>
+                                <button class="text-sm border border-gray-700 text-muted py-2 px-4 rounded-full hover-bg-hover transition-colors duration-300">Festivals</button>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center p-5 rounded-xl bg-hover hover:bg-hover hover-lift transition-all duration-300 group">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-700 to-purple-900 rounded-lg flex flex-col items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="text-xs">JUL</span>
+                                    <span class="text-2xl font-bold">12</span>
+                                </div>
+                                <div class="flex-grow">
+                                    <h4 class="name font-bold text-lg group-hover:text-purple-300 transition-colors duration-300">Urban Beats Festival</h4>
+                                    <p class="name text-sm text-muted">Downtown Arena • 8 PM</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-amber-400">$25 - $75</p>
+                                    <p class="text-sm text-muted">15 bands</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-5 rounded-xl bg-hover hover:bg-hover hover-lift transition-all duration-300 group">
+                                <div class="w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-900 rounded-lg flex flex-col items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="text-xs">JUL</span>
+                                    <span class="text-2xl font-bold">14</span>
+                                </div>
+                                <div class="flex-grow">
+                                    <h4 class="name font-bold text-lg group-hover:text-amber-300 transition-colors duration-300">Acoustic Nights</h4>
+                                    <p class="name text-sm text-muted">The Velvet Lounge • 7 PM</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-amber-400">$12</p>
+                                    <p class="text-sm text-muted">Intimate Setting</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-5 rounded-xl bg-hover hover:bg-hover hover-lift transition-all duration-300 group">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-lg flex flex-col items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300">
+                                    <span class="text-xs">JUL</span>
+                                    <span class="text-2xl font-bold">16</span>
+                                </div>
+                                <div class="flex-grow">
+                                    <h4 class="name font-bold text-lg group-hover:text-blue-300 transition-colors duration-300">Virtual Concert: Synthwave Night</h4>
+                                    <p class="name text-sm text-muted">Online • 9 PM EST</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-bold text-amber-400">Free</p>
+                                    <p class="text-sm text-muted">Donations welcome</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-8 border border-purple-500 text-purple-300 hover-bg-hover font-semibold py-4 rounded-xl hover-lift transition-all duration-300 flex items-center justify-center group">
+                            View All Events <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8 hover-lift">
+                    <h3 class="text-2xl font-bold mb-8">Book Your Next Gig</h3>
+                    <p class="text-muted mb-8 leading-relaxed">Connect with venues and event organizers looking for bands like yours.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center p-4 rounded-xl bg-hover hover:bg-hover transition-all duration-300 hover-lift group">
+                            <div class="w-12 h-12  flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-glass-cheers text-xl">🗓️</i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold group-hover:text-green-300 transition-colors duration-300">Venue Match</h4>
+                                <p class="text-sm text-muted">Find perfect venues for your sound</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 rounded-xl bg-hover hover:bg-hover transition-all duration-300 hover-lift group">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-file-contract text-xl">📈</i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold group-hover:text-red-300 transition-colors duration-300">Contract Tools</h4>
+                                <p class="text-sm text-muted">Professional booking agreements</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 rounded-xl bg-hover hover:bg-hover transition-all duration-300 hover-lift group">
+                            <div class="w-12 h-12  flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-chart-line text-xl">📊</i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold group-hover:text-purple-300 transition-colors duration-300">Earnings Dashboard</h4>
+                                <p class="text-sm text-muted">Track payments and performance fees</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-to-r from-green-600 to-green-800 hover:from-green-700 hover:to-green-900 text-white font-semibold py-4 rounded-xl hover-lift hover-brighten transition-all duration-300">
+                        <i class="fas fa-search mr-2"></i> Find Gig Opportunities
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 4: Music Promotion Tools -->
+        <section class="mb-20 slide-up delay-4">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-10 text-center">
+                <i class="fas fa-bullhorn text-amber-400 mr-3"></i>
+                Promotion Tools for Artists
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-gradient rounded-2xl p-8 text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6  to-purple-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-chart-bar text-3xl">📊</i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 group-hover:text-purple-300 transition-colors duration-300">Analytics Dashboard</h4>
+                    <p class="text-muted text-sm leading-relaxed">Track streams, fan demographics, and engagement metrics in real-time with beautiful visualizations.</p>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8 text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-mail-bulk text-3xl">📈</i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 group-hover:text-blue-300 transition-colors duration-300">Fan Outreach</h4>
+                    <p class="text-muted text-sm leading-relaxed">Email campaigns and social media tools to connect with your audience across platforms.</p>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8 text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-ticket-alt text-3xl">🎫</i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 group-hover:text-green-300 transition-colors duration-300">Ticketing System</h4>
+                    <p class="text-muted text-sm leading-relaxed">Sell tickets directly to fans with no hidden fees or commissions. Easy integration with your site.</p>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8 text-center hover-lift group">
+                    <div class="w-20 h-20 mx-auto mb-6  flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-ad text-3xl">📝</i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 group-hover:text-red-300 transition-colors duration-300">Promoted Listings</h4>
+                    <p class="text-muted text-sm leading-relaxed">Get featured in search results and recommendations to reach new fans. Boost your visibility.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 5: Community & Collaboration -->
+        <section class="mb-20 slide-up delay-5">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden hover-lift shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="md:flex">
+            <div class="md:w-1/2 p-10 md:p-12 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-8">
+                    <i class="fas fa-users text-purple-500 dark:text-purple-400 mr-3"></i>
+                    Collaborate & Connect
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-10 leading-relaxed text-lg">Find musicians, producers, and collaborators for your next project. Groww's community connects artists across genres and locations to create amazing music together.</p>
+                
+                <div class="space-y-8 mb-10">
+                    <div class="flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-search text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors duration-300">Find Band Members</h4>
+                            <p class="text-gray-500 dark:text-gray-400">Search by instrument, genre, and location</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-amber-500 to-amber-700 flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-project-diagram text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors duration-300">Collaboration Projects</h4>
+                            <p class="text-gray-500 dark:text-gray-400">Join or create collaborative music projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-comments text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300">Artist Forums</h4>
+                            <p class="text-gray-500 dark:text-gray-400">Discuss gear, techniques, and industry tips</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white font-semibold py-4 px-10 rounded-full hover-lift hover-brighten transition-all duration-300 flex items-center group shadow-lg hover:shadow-xl">
+                    Join Community <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
+                </button>
+            </div>
+            
+            <!-- ACTIVE COLLABORATIONS SECTION - LIGHT THEME FIXED -->
+            <div class="md:w-1/2 p-10 md:p-12 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+                <h3 class="text-2xl font-bold mb-10 text-gray-800 dark:text-white">Active Collaborations</h3>
+                
+                <div class="space-y-8">
+                    <!-- Collaboration 1 -->
+                    <div class="flex items-center group hover-lift p-4 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex -space-x-4 mr-6">
+                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800 overflow-hidden group-hover:border-purple-500 transition-colors duration-300 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     alt="User" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800 overflow-hidden group-hover:border-purple-500 transition-colors duration-300 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     alt="User" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors duration-300">Folk Fusion Project</h4>
+                            <p class="text-gray-500 dark:text-gray-400">3 members • Looking for percussionist</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Collaboration 2 -->
+                    <div class="flex items-center group hover-lift p-4 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex -space-x-4 mr-6">
+                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800 overflow-hidden group-hover:border-amber-500 transition-colors duration-300 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     alt="User" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800 overflow-hidden group-hover:border-amber-500 transition-colors duration-300 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     alt="User" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors duration-300">Electronic Duo</h4>
+                            <p class="text-gray-500 dark:text-gray-400">2 members • Seeking vocalist</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Collaboration 3 -->
+                    <div class="flex items-center group hover-lift p-4 rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex -space-x-4 mr-6">
+                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800 overflow-hidden group-hover:border-green-500 transition-colors duration-300 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                     alt="User" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold group-hover:border-green-500 transition-colors duration-300 shadow-md">
+                                +2
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-300 transition-colors duration-300">Jazz Quintet</h4>
+                            <p class="text-gray-500 dark:text-gray-400">5 members • Full band</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="w-full mt-10 border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-white font-medium py-4 rounded-xl hover-lift transition-all duration-300 flex items-center justify-center group shadow-md hover:shadow-lg">
+                    View All Collaborations <i class="fas fa-external-link-alt ml-3 group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Component 6: Success Stories & Testimonials -->
+        <section class="music-wave py-10 rounded-3xl slide-up delay-5">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-12 text-center">
+                <i class="fas fa-award text-amber-400 mr-3"></i>
+                Success Stories
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4">
+                <div class="card-gradient rounded-2xl p-8 hover-lift group">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-amber-500 group-hover:border-amber-400 transition-colors duration-300">
+                            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="font-bold text-xl hover-underline inline-block">Sarah Melody</h4>
+                            <p class="text-muted">Singer-Songwriter</p>
+                        </div>
+                    </div>
+                    <p class="text-muted italic mb-8 leading-relaxed text-lg">"Groww helped me book my first tour across 12 cities. The platform connected me with venues I never would have found on my own. My fanbase grew by 425% in just 6 months!"</p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-muted">Growth on Groww</p>
+                            <p class="font-bold text-green-400 text-xl">+425% <span class="text-sm">in 6 months</span></p>
+                        </div>
+                        <div class="text-amber-400 text-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8 hover-lift group">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-purple-500 group-hover:border-purple-400 transition-colors duration-300">
+                            <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="font-bold text-xl hover-underline inline-block">Neon Dreams</h4>
+                            <p class="text-muted">Synthwave Band</p>
+                        </div>
+                    </div>
+                    <p class="text-muted italic mb-8 leading-relaxed text-lg">"The promotion tools helped us grow from local bars to festival stages. Our streaming numbers tripled after using their analytics. We've never had this level of insight into our audience."</p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-muted">Stream Increase</p>
+                            <p class="font-bold text-green-400 text-xl">+312% <span class="text-sm">in 4 months</span></p>
+                        </div>
+                        <div class="text-amber-400 text-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-gradient rounded-2xl p-8 hover-lift group">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-green-500 group-hover:border-green-400 transition-colors duration-300">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artist" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="ml-6">
+                            <h4 class="font-bold text-xl hover-underline inline-block">The Harmonix</h4>
+                            <p class="text-muted">Funk & Soul Band</p>
+                        </div>
+                    </div>
+                    <p class="text-muted italic mb-8 leading-relaxed text-lg">"Through Groww's community, we found our missing band members and now have a full lineup. The collaboration tools made it easy to coordinate rehearsals and manage our schedule."</p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-muted">Gigs Booked</p>
+                            <p class="font-bold text-green-400 text-xl">28 <span class="text-sm">in 3 months</span></p>
+                        </div>
+                        <div class="text-amber-400 text-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="gradient-border bg-gradient-to-r from-purple-600 to-amber-600 hover:from-purple-700 hover:to-amber-700 text-white font-semibold py-4 px-10 rounded-full hover-lift hover-brighten transition-all duration-300 inline-flex items-center group">
+                    Read More Success Stories <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform duration-300"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Light/Dark Mode Toggle
+        const modeToggle = document.getElementById('modeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        }
+        
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            // Save preference to localStorage
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            
+            // Add animation to the toggle button
+            modeToggle.style.transform = 'scale(1.2) rotate(180deg)';
+            setTimeout(() => {
+                modeToggle.style.transform = '';
+            }, 300);
+        });
+        
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to all buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add ripple effect to buttons
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.backgroundColor = body.classList.contains('light-mode') ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.3)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+            
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+        
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            button {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .animate-slide-up {
+                animation: slideUp 0.8s ease forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-white pt-20 pb-10 px-6" dir="ltr">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    
+    <!-- Newsletter / Sign Up -->
+    <div>
+  <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="w-1 h-6 bg-violet/40"></span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>      <p class="text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
+
+      <form class="flex flex-col sm:flex-row gap-4 rtl:flex-row-reverse">
+        <input type="email" placeholder="ENTER YOUR EMAIL"
+          class="bg-transparent border-2 border-white placeholder-white/60 px-6 py-4 outline-none focus:bg-white/5 w-full font-bold text-white">
+        <button type="submit"
+          class="bg-white text-violet px-8 py-4 font-bold uppercase hover:bg-blue hover:text-white transition-colors whitespace-nowrap">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-14 gap-10 rtl:text-right">
+      
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About</a></li>
+        <li><a href="programs.html" class="hover:underline">Programs</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Instagram</a></li>
+        <li><a href="#" class="hover:underline">Twitter</a></li>
+        <li><a href="#" class="hover:underline">TikTok</a></li>
+        <li><a href="#" class="hover:underline">Youtube</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Concert</a></li>
+        <li><a href="#" class="hover:underline">Press Kit</a></li>
+        <li><a href="#" class="hover:underline">Privacy</a></li>
+        <li><a href="#" class="hover:underline">Bookings</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-wider rtl:text-right">
+    <span>&copy; 2025 The Groww-Band Music Group.</span>
+  </div>
+</footer>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  
+  // SINGLE FUNCTION FOR RTL TOGGLE
+  function toggleRTL() {
+    const isRTL = html.getAttribute('dir') === 'rtl';
+    
+    if (isRTL) {
+      // Switch to LTR
+      html.setAttribute('dir', 'ltr');
+      html.setAttribute('lang', 'en');
+    } else {
+      // Switch to RTL
+      html.setAttribute('dir', 'rtl');
+      html.setAttribute('lang', 'ar');
+    }
+    
+    // Save preference
+    localStorage.setItem('dir', html.getAttribute('dir'));
+    
+    // Force redraw for mobile menu if it's open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.style.display = 'none';
+      setTimeout(() => {
+        mobileMenu.style.display = '';
+      }, 10);
+    }
+  }
+  
+  // FIXED THEME TOGGLE FUNCTION
+  function toggleTheme() {
+    // Check if dark class exists
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      // Switch to light mode
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    } else {
+      // Switch to dark mode
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+    
+    // Alternative: If using data-theme attribute
+    // const currentTheme = html.getAttribute('data-theme');
+    // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // html.setAttribute('data-theme', newTheme);
+    // localStorage.setItem('theme', newTheme);
+    
+    // Save theme preference
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  }
+  
+  // ===== EVENT LISTENERS =====
+  
+  // Desktop RTL toggle
+  document.getElementById('rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Mobile RTL toggle
+  document.getElementById('mobile-rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Desktop theme toggle
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // Mobile theme toggle
+  document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // ===== RESTORE SAVED SETTINGS =====
+  
+  // Restore RTL
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    html.setAttribute('dir', savedDir);
+    html.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+  }
+  
+  // Restore theme - FIXED
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    // Remove both classes first
+    document.documentElement.classList.remove('dark', 'light');
+    
+    // Add the saved theme class
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  } else {
+    // Default to light if no preference saved
+    document.documentElement.classList.add('light');
+  }
+});
+
+// Mobile menu toggle (separate from RTL)
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  }
+});
+
+// Submenu toggle for mobile
+function toggleSubMenu(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("hidden");
+}
+
+// Dropdown toggle for desktop
+function toggleDropdown(id) {
+  document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+    if (menu.id !== id) menu.classList.add('hidden');
+  });
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('li')) {
+    document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+</script>
+
+<script>
+// Mobile menu toggle (separate from RTL)
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  }
+});
+
+// Submenu toggle for mobile
+function toggleSubMenu(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("hidden");
+}
+
+// Dropdown toggle for desktop
+function toggleDropdown(id) {
+  document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+    if (menu.id !== id) menu.classList.add('hidden');
+  });
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('li')) {
+    document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+</script>
+
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        violet: '#7F00FF',
+        blue: '#00C2FF',
+        deep: '#0A0F1F',
+        soft: '#F5F7FA'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
+      }
+    }
+  }
+  // REMOVE the RTL plugin - we'll handle it with CSS instead
+}
+</script>
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>

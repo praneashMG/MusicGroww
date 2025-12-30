@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - 𝄞𝄢Groww Band</title>
+      <link rel="icon" href="growwpark_logo.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA',
+            'dashboard-bg': '#F8FAFC',
+            'card-light': '#FFFFFF',
+            'sidebar-light': '#FFFFFF',
+            'accent-pink': '#FF006E',
+            'accent-cyan': '#00F5D4',
+            'accent-yellow': '#FFD60A'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #1E293B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7F00FF;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00C2FF;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    /* Card hover effects */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-5px);
+    }
+    .light .hover-lift:hover {
+      box-shadow: 0 10px 30px rgba(127, 0, 255, 0.1);
+    }
+    .dark .hover-lift:hover {
+      box-shadow: 0 10px 30px rgba(127, 0, 255, 0.2);
+    }
+    
+    /* RTL specific styles */
+    [dir="rtl"] .sidebar-nav {
+      text-align: right;
+    }
+    
+    [dir="rtl"] .stat-card {
+      flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .top-tracks-item {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+    
+    [dir="rtl"] .activity-item {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+    
+    [dir="rtl"] .event-card {
+      text-align: right;
+    }
+    
+    [dir="rtl"] .geo-stats {
+      text-align: right;
+    }
+    
+    /* Color transitions */
+    .color-transition {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+      .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+  </style>
+  
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-dashboard-bg dark:bg-deep text-gray-800 dark:text-gray-100 font-sans color-transition">
+  
+  <!-- Theme & RTL Toggle Buttons -->
+<!-- Theme & RTL Toggle Buttons (DESKTOP ONLY) -->
+<div class="fixed bottom-6 right-6 z-50 hidden lg:flex flex-col gap-3">
+    <!-- RTL Toggle -->
+    <button id="rtl-toggle" class="w-12 h-12 rounded-full bg-gradient-to-r from-violet to-blue text-white shadow-lg flex items-center justify-center hover:opacity-90 transition-all transform hover:scale-105">
+      <i class="fas fa-exchange-alt text-lg"></i>
+    </button>
+    
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="w-12 h-12 rounded-full bg-gradient-to-r from-accent-pink to-accent-yellow text-white shadow-lg flex items-center justify-center hover:opacity-90 transition-all transform hover:scale-105">
+      <i class="fas fa-moon text-lg"></i>
+    </button>
+  </div>
+  
+  <!-- Dashboard Container -->
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+<aside id="sidebar"
+  class="hidden lg:flex flex-col w-64
+         fixed lg:static inset-0 z-50
+         bg-sidebar-light dark:bg-gradient-to-b
+         dark:from-gray-900 dark:to-black
+         border-r border-gray-200 dark:border-gray-800
+         transition-transform duration-300">
+  <!-- Mobile Close Button (visible only on mobile) -->
+  <div class="lg:hidden flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-r from-violet to-blue flex items-center justify-center">
+      </div>
+      <div>
+        <h1 class="text-xl font-display font-bold bg-gradient-to-r from-violet to-blue bg-clip-text text-transparent">Groww Band</h1>
+        <p class="text-xs text-gray-500 dark:text-gray-400">User Dashboard</p>
+      </div>
+    </div>
+    <button id="mobile-close-btn" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+      <i class="fas fa-times text-xl"></i>
+    </button>
+  </div>
+  
+  <!-- Logo (hidden on mobile since we have it in the close button section) -->
+     <div class="hidden lg:block p-6 border-b border-gray-200 dark:border-gray-800">
+    <div class="flex items-center space-x-3">
+
+      <div>
+        <h1 class="text-xl  font-bold text-gradient-to-r from-violet to-blue text-blueviolet"><a href="index.html">Groww<span class="text-blueviolet"> Band</span> </a></h1>
+        <p class="text-xs text-gray-500 dark:text-gray-400">User Dashboard</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- User Profile -->
+  <div class="p-6 border-b border-gray-200 dark:border-gray-800">
+    <div class="flex items-center space-x-3">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=400&auto=format&fit=crop&q=60" 
+             class="w-12 h-12 rounded-full object-cover border-2 border-violet"
+             alt="User Avatar">
+        <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-gray-900"></div>
+      </div>
+      <div class="flex-1">
+        <h3 class="font-semibold">Alex Johnson</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Premium Member</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="flex-1 p-4 space-y-2 sidebar-nav">
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-violet/10 dark:bg-violet/20 text-violet dark:text-violet-300 font-medium hover:bg-violet/20 dark:hover:bg-violet/30 transition">
+      <i class="fas fa-tachometer-alt w-5"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+      <i class="fas fa-music w-5"></i>
+      <span>My Music</span>
+    </a>
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+      <i class="fas fa-calendar-alt w-5"></i>
+      <span>Events</span>
+    </a>
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+      <i class="fas fa-chart-bar w-5"></i>
+      <span>Analytics</span>
+    </a>
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+      <i class="fas fa-wallet w-5"></i>
+      <span>Earnings</span>
+    </a>
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+      <i class="fas fa-users w-5"></i>
+      <span>Collaborators</span>
+    </a>
+    <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition">
+      <i class="fas fa-cog w-5"></i>
+      <span>Settings</span>
+    </a>
+     <a href="admin.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white transition-all">
+          <i class="fas fa-cog w-5"></i>
+          <span>Admin Dashboard</span>
+        </a>
+        
+         <a href="login.html" class="flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white transition-all">
+          <i class="fas fa-cog w-5"></i>
+          <span>Logout</span>
+        </a>
+  </nav>
+  
+  <!-- Upgrade Banner -->
+  <div class="p-4 m-4 rounded-lg bg-gradient-to-r from-violet/10 to-blue/10 dark:from-violet/20 dark:to-blue/20 border border-violet/20 dark:border-violet/30">
+    <h4 class="font-semibold text-sm mb-2">Unlock Pro Features</h4>
+    <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Get advanced analytics and unlimited uploads</p>
+    <button class="w-full py-2 bg-gradient-to-r from-violet to-blue text-white rounded-lg text-sm font-medium hover:opacity-90 transition">
+      Upgrade Now
+    </button>
+  </div>
+</aside>
+<header class="lg:hidden fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md z-40 border-b border-gray-200 dark:border-gray-800 color-transition">
+  <div class="flex items-center justify-between p-4">
+    <div class="flex items-center space-x-3">
+      <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+        <!-- Bars icon for closed menu -->
+        <i class="fas fa-bars text-xl" id="menu-open-icon"></i>
+        <!-- Cross icon for open menu (hidden by default) -->
+        <i class="fas fa-times text-xl hidden" id="menu-close-icon"></i>
+      </button>
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-violet to-blue flex items-center justify-center">
+          <span class="text-white font-bold">𝄞</span>
+        </div>
+        <span class="font-display font-bold">Dashboard</span>
+      </div>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button id="mobile-rtl-toggle" class="text-gray-600 dark:text-gray-400 mx-[20px] hover:text-gray-900 dark:hover:text-white">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+      <button id="mobile-theme-toggle" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=200&auto=format&fit=crop&q=60" 
+             class="w-full h-full object-cover"
+             alt="User">
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+    <!-- Main Content -->
+    <main class="flex-1 lg:ml-0 pt-16 lg:pt-0">
+      
+      <!-- Top Bar -->
+      <div class="p-4 lg:p-6 border-b border-gray-200 dark:border-gray-800">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+          <div>
+            <h1 class="text-2xl lg:text-3xl font-display font-bold">Welcome back, Alex! <span class="text-violet">👋</span></h1>
+            <p class="text-gray-600 dark:text-gray-400">Here's what's happening with your music today</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button class="px-4 py-2 bg-gradient-to-r from-violet to-blue text-white rounded-lg font-medium hover:opacity-90 transition flex items-center gap-2 hover-lift">
+              <i class="fas fa-plus"></i>
+              Upload Track
+            </button>
+            <button class="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition flex items-center gap-2 hover-lift">
+              <i class="fas fa-calendar-plus"></i>
+              New Event
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Stats Cards -->
+      <div class="p-4 lg:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <!-- Total Plays -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 hover-lift border border-gray-200 dark:border-gray-700 animate-fade-in stat-card">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Total Plays</p>
+              <h3 class="text-2xl font-bold mt-2 text-gray-900 dark:text-white">1,245,892</h3>
+              <p class="text-green-500 text-sm mt-1">
+                <i class="fas fa-arrow-up mr-1"></i>
+                12.5% from last month
+              </p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-violet/10 dark:bg-violet/20 flex items-center justify-center">
+              <i class="fas fa-play text-violet text-xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Monthly Listeners -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 hover-lift border border-gray-200 dark:border-gray-700 animate-fade-in stat-card" style="animation-delay: 0.1s">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Monthly Listeners</p>
+              <h3 class="text-2xl font-bold mt-2 text-gray-900 dark:text-white">124,589</h3>
+              <p class="text-green-500 text-sm mt-1">
+                <i class="fas fa-arrow-up mr-1"></i>
+                8.3% from last month
+              </p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-blue/10 dark:bg-blue/20 flex items-center justify-center">
+              <i class="fas fa-headphones text-blue text-xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Total Earnings -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 hover-lift border border-gray-200 dark:border-gray-700 animate-fade-in stat-card" style="animation-delay: 0.2s">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Total Earnings</p>
+              <h3 class="text-2xl font-bold mt-2 text-gray-900 dark:text-white">$12,458</h3>
+              <p class="text-green-500 text-sm mt-1">
+                <i class="fas fa-arrow-up mr-1"></i>
+                5.2% from last month
+              </p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-accent-cyan/10 dark:bg-accent-cyan/20 flex items-center justify-center">
+              <i class="fas fa-dollar-sign text-accent-cyan text-xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tracks Uploaded -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 hover-lift border border-gray-200 dark:border-gray-700 animate-fade-in stat-card" style="animation-delay: 0.3s">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Tracks Uploaded</p>
+              <h3 class="text-2xl font-bold mt-2 text-gray-900 dark:text-white">48</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">+2 this month</p>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-accent-yellow/10 dark:bg-accent-yellow/20 flex items-center justify-center">
+              <i class="fas fa-music text-accent-yellow text-xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Charts & Recent Activity -->
+      <div class="p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Plays Chart -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-semibold">Plays Overview</h3>
+            <select class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-1 text-sm text-gray-800 dark:text-gray-200">
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+              <option>Last 3 months</option>
+            </select>
+          </div>
+          <div class="h-64">
+            <canvas id="playsChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Top Tracks -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg font-semibold mb-6">Top Tracks</h3>
+          <div class="space-y-4">
+            <!-- Track 1 -->
+            <div class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition top-tracks-item">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-gradient-to-r from-violet to-blue flex items-center justify-center">
+                  <i class="fas fa-play text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Bloodline Beats</h4>
+                  <p class="text-xs text-gray-600 dark:text-gray-400">Album: New Horizons</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">245,892 plays</p>
+                <p class="text-xs text-green-500">+12.5%</p>
+              </div>
+            </div>
+            
+            <!-- Track 2 -->
+            <div class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition top-tracks-item">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-gradient-to-r from-accent-pink to-accent-yellow flex items-center justify-center">
+                  <i class="fas fa-play text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Midnight Symphony</h4>
+                  <p class="text-xs text-gray-600 dark:text-gray-400">Single Release</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">189,456 plays</p>
+                <p class="text-xs text-green-500">+8.7%</p>
+              </div>
+            </div>
+            
+            <!-- Track 3 -->
+            <div class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition top-tracks-item">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-gradient-to-r from-accent-cyan to-blue flex items-center justify-center">
+                  <i class="fas fa-play text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Urban Dreams</h4>
+                  <p class="text-xs text-gray-600 dark:text-gray-400">EP: City Lights</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">156,789 plays</p>
+                <p class="text-xs text-green-500">+5.3%</p>
+              </div>
+            </div>
+            
+            <!-- Track 4 -->
+            <div class="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition top-tracks-item">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+                  <i class="fas fa-play text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Electric Soul</h4>
+                  <p class="text-xs text-gray-600 dark:text-gray-400">Album: Voltage</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">134,567 plays</p>
+                <p class="text-xs text-green-500">+3.8%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
+          <h3 class="text-lg font-semibold mb-6">Recent Activity</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition activity-item">
+              <div class="w-8 h-8 rounded-full bg-violet/10 dark:bg-violet/20 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-upload text-violet text-sm"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm">
+                  <span class="font-medium">You</span> uploaded a new track "Neon Lights"
+                </p>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">2 hours ago</p>
+              </div>
+              <span class="text-xs px-2 py-1 bg-violet/10 dark:bg-violet/20 text-violet rounded-full">Music</span>
+            </div>
+            
+            <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition activity-item">
+              <div class="w-8 h-8 rounded-full bg-accent-pink/10 dark:bg-accent-pink/20 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-users text-accent-pink text-sm"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm">
+                  <span class="font-medium">DJ Pulse</span> started following you
+                </p>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">5 hours ago</p>
+              </div>
+              <span class="text-xs px-2 py-1 bg-accent-pink/10 dark:bg-accent-pink/20 text-accent-pink rounded-full">Social</span>
+            </div>
+            
+            <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition activity-item">
+              <div class="w-8 h-8 rounded-full bg-accent-cyan/10 dark:bg-accent-cyan/20 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-dollar-sign text-accent-cyan text-sm"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm">
+                  Payment of <span class="font-medium">$458.90</span> received
+                </p>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">1 day ago</p>
+              </div>
+              <span class="text-xs px-2 py-1 bg-accent-cyan/10 dark:bg-accent-cyan/20 text-accent-cyan rounded-full">Earnings</span>
+            </div>
+            
+            <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition activity-item">
+              <div class="w-8 h-8 rounded-full bg-accent-yellow/10 dark:bg-accent-yellow/20 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-calendar-alt text-accent-yellow text-sm"></i>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm">
+                  New event "Summer Fest 2024" added to your calendar
+                </p>
+                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">2 days ago</p>
+              </div>
+              <span class="text-xs px-2 py-1 bg-accent-yellow/10 dark:bg-accent-yellow/20 text-accent-yellow rounded-full">Events</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-semibold">Upcoming Events</h3>
+            <button class="text-sm text-violet hover:text-blue transition">
+              View All
+            </button>
+          </div>
+          <div class="space-y-4">
+            <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-violet/50 transition hover-lift event-card">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="font-semibold">Live Performance @ Music Fest</h4>
+                <span class="text-xs px-2 py-1 bg-violet/10 dark:bg-violet/20 text-violet rounded-full">Live</span>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Main Stage Performance with special guests</p>
+              <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-gray-500"></i>
+                  <span>June 15, 2024</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-clock text-gray-500"></i>
+                  <span>8:00 PM EST</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-accent-pink/50 transition hover-lift event-card">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="font-semibold">Studio Recording Session</h4>
+                <span class="text-xs px-2 py-1 bg-accent-pink/10 dark:bg-accent-pink/20 text-accent-pink rounded-full">Studio</span>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Recording new album with producer Mark</p>
+              <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-gray-500"></i>
+                  <span>June 20, 2024</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-clock text-gray-500"></i>
+                  <span>10:00 AM EST</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-accent-cyan/50 transition hover-lift event-card">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="font-semibold">Fan Meet & Greet</h4>
+                <span class="text-xs px-2 py-1 bg-accent-cyan/10 dark:bg-accent-cyan/20 text-accent-cyan rounded-full">Meetup</span>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Exclusive meetup for premium subscribers</p>
+              <div class="flex items-center justify-between text-sm">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-gray-500"></i>
+                  <span>June 25, 2024</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-clock text-gray-500"></i>
+                  <span>4:00 PM EST</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 lg:col-span-2">
+          <h3 class="text-lg font-semibold mb-6 geo-stats">Top Geographic Distribution</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700/30">
+              <div class="text-2xl font-bold mb-2">🇺🇸</div>
+              <h4 class="font-semibold">United States</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">458,923 plays</p>
+              <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div class="bg-violet rounded-full h-2" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700/30">
+              <div class="text-2xl font-bold mb-2">🇬🇧</div>
+              <h4 class="font-semibold">United Kingdom</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">189,456 plays</p>
+              <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div class="bg-accent-pink rounded-full h-2" style="width: 45%"></div>
+              </div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-gray-50 dark:bg-gray-700/30">
+              <div class="text-2xl font-bold mb-2">🇩🇪</div>
+              <h4 class="font-semibold">Germany</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">156,789 plays</p>
+              <div class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div class="bg-accent-cyan rounded-full h-2" style="width: 38%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-semibold">Notifications</h3>
+            <span class="text-xs px-2 py-1 bg-violet/10 dark:bg-violet/20 text-violet rounded-full">3 New</span>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3 p-3 rounded-lg bg-violet/5 dark:bg-violet/10">
+              <div class="w-8 h-8 rounded-full bg-violet flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-trophy text-white text-sm"></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium">Milestone Reached!</p>
+                <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">You've reached 1M total plays</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 p-3 rounded-lg bg-accent-pink/5 dark:bg-accent-pink/10">
+              <div class="w-8 h-8 rounded-full bg-accent-pink flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-calendar-check text-white text-sm"></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium">Event Reminder</p>
+                <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Live performance in 3 days</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3 p-3 rounded-lg bg-accent-cyan/5 dark:bg-accent-cyan/10">
+              <div class="w-8 h-8 rounded-full bg-accent-cyan flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-money-bill-wave text-white text-sm"></i>
+              </div>
+              <div>
+                <p class="text-sm font-medium">Payment Received</p>
+                <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">$245.89 from streaming</p>
+                <script>
+  // Theme Toggle Functionality
+  function toggleTheme() {
+    const html = document.documentElement;
+    const themeToggleIcon = document.getElementById('theme-toggle').querySelector('i');
+    const mobileThemeToggleIcon = document.getElementById('mobile-theme-toggle').querySelector('i');
+    
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      html.classList.add('light');
+      themeToggleIcon.className = 'fas fa-sun text-lg';
+      mobileThemeToggleIcon.className = 'fas fa-sun';
+      
+      // Update Chart colors for light mode
+      updateChartColors(false);
+    } else {
+      html.classList.remove('light');
+      html.classList.add('dark');
+      themeToggleIcon.className = 'fas fa-moon text-lg';
+      mobileThemeToggleIcon.className = 'fas fa-moon';
+      
+      // Update Chart colors for dark mode
+      updateChartColors(true);
+    }
+    
+    // Save preference to localStorage
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+  }
+
+  // RTL Toggle Functionality
+  function toggleRTL() {
+    const html = document.documentElement;
+    
+    if (html.getAttribute('dir') === 'rtl') {
+      html.setAttribute('dir', 'ltr');
+      localStorage.setItem('direction', 'ltr');
+    } else {
+      html.setAttribute('dir', 'rtl');
+      localStorage.setItem('direction', 'rtl');
+    }
+  }
+
+  // Initialize Chart
+  let playsChart;
+  function initializeChart(isDarkMode) {
+    const ctx = document.getElementById('playsChart').getContext('2d');
+    
+    // Destroy previous chart if exists
+    if (playsChart) {
+      playsChart.destroy();
+    }
+    
+    // Colors based on theme
+    const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    const textColor = isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.6)';
+    const gradientStart = isDarkMode ? 'rgba(127, 0, 255, 0.8)' : 'rgba(127, 0, 255, 0.6)';
+    const gradientEnd = isDarkMode ? 'rgba(0, 194, 255, 0.8)' : 'rgba(0, 194, 255, 0.6)';
+    
+    // Create gradient
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, gradientStart);
+    gradient.addColorStop(1, gradientEnd);
+    
+    playsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Plays',
+          data: [12000, 19000, 15000, 25000, 22000, 30000, 28000],
+          backgroundColor: gradient,
+          borderColor: isDarkMode ? '#7F00FF' : '#7F00FF',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: isDarkMode ? '#00C2FF' : '#7F00FF',
+          pointBorderColor: '#FFFFFF',
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 7
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: gridColor
+            },
+            ticks: {
+              color: textColor,
+              callback: function(value) {
+                return value >= 1000 ? value/1000 + 'k' : value;
+              }
+            }
+          },
+          x: {
+            grid: {
+              color: gridColor
+            },
+            ticks: {
+              color: textColor
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Update chart colors when theme changes
+  function updateChartColors(isDarkMode) {
+    if (playsChart) {
+      const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+      const textColor = isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.6)';
+      
+      playsChart.options.scales.y.grid.color = gridColor;
+      playsChart.options.scales.y.ticks.color = textColor;
+      playsChart.options.scales.x.grid.color = gridColor;
+      playsChart.options.scales.x.ticks.color = textColor;
+      
+      playsChart.update();
+    }
+  }
+
+  // Mobile Menu Toggle Function
+  // function toggleMobileMenu() {
+  //   const sidebar = document.querySelector('aside');
+  //   const menuOpenIcon = document.getElementById('menu-open-icon');
+  //   const menuCloseIcon = document.getElementById('menu-close-icon');
+    
+  //   if (sidebar.classList.contains('hidden')) {
+  //     // Open menu
+  //     sidebar.classList.remove('hidden');
+  //     sidebar.classList.add('flex', 'absolute', 'z-50', 'h-full', 'inset-0');
+  //     menuOpenIcon.classList.add('hidden');
+  //     menuCloseIcon.classList.remove('hidden');
+      
+  //     // Disable scrolling on body when menu is open
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     // Close menu
+  //     closeMobileMenu();
+  //   }
+  // }
+
+  // Close Mobile Menu Function
+  // function closeMobileMenu() {
+  //   const sidebar = document.querySelector('aside');
+  //   const menuOpenIcon = document.getElementById('menu-open-icon');
+  //   const menuCloseIcon = document.getElementById('menu-close-icon');
+    
+  //   sidebar.classList.add('hidden');
+  //   sidebar.classList.remove('flex', 'absolute', 'z-50', 'h-full', 'inset-0');
+  //   menuOpenIcon.classList.remove('hidden');
+  //   menuCloseIcon.classList.add('hidden');
+    
+  //   // Enable scrolling on body
+  //   document.body.style.overflow = '';
+  // }
+
+  // Event Listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set initial theme from localStorage or preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      document.getElementById('theme-toggle').querySelector('i').className = 'fas fa-sun text-lg';
+      document.getElementById('mobile-theme-toggle').querySelector('i').className = 'fas fa-sun';
+    } else {
+      document.documentElement.classList.add('light');
+      document.getElementById('theme-toggle').querySelector('i').className = 'fas fa-moon text-lg';
+      document.getElementById('mobile-theme-toggle').querySelector('i').className = 'fas fa-moon';
+    }
+    
+    // Set initial direction from localStorage
+    const savedDirection = localStorage.getItem('direction') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDirection);
+    
+    // Initialize chart
+    initializeChart(document.documentElement.classList.contains('dark'));
+    
+    // Add event listeners
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('mobile-theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('rtl-toggle').addEventListener('click', toggleRTL);
+    document.getElementById('mobile-rtl-toggle').addEventListener('click', toggleRTL);
+    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+    
+    // Add event listener for mobile close button inside sidebar
+    const mobileCloseBtn = document.getElementById('mobile-close-btn');
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const sidebar = document.querySelector('aside');
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileCloseBtn = document.getElementById('mobile-close-btn');
+      
+      if (sidebar && !sidebar.classList.contains('hidden') && 
+          !sidebar.contains(event.target) && 
+          event.target !== menuBtn && 
+          !menuBtn.contains(event.target) &&
+          event.target !== mobileCloseBtn && 
+          !mobileCloseBtn.contains(event.target)) {
+        
+        closeMobileMenu();
+      }
+    });
+    
+    // Close mobile menu when clicking on navigation links (optional)
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 1024) { // Only on mobile
+          closeMobileMenu();
+        }
+      });
+    });
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+<script>
+function openMobileMenu() {
+  const sidebar = document.getElementById('sidebar');
+  document.getElementById('menu-open-icon').classList.add('hidden');
+  document.getElementById('menu-close-icon').classList.remove('hidden');
+
+  sidebar.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  const sidebar = document.getElementById('sidebar');
+  document.getElementById('menu-open-icon').classList.remove('hidden');
+  document.getElementById('menu-close-icon').classList.add('hidden');
+
+  sidebar.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('mobile-menu-btn')
+    .addEventListener('click', () => {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.contains('hidden')
+        ? openMobileMenu()
+        : closeMobileMenu();
+    });
+
+  document.getElementById('mobile-close-btn')
+    ?.addEventListener('click', closeMobileMenu);
+});
+</script>
+</body>
+</html>

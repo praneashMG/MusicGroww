@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" class="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Music Artistry Site — Violet & Blue Theme</title>
+  <link rel="icon" href="growwpark_logo.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA',
+            cardlight: '#FFFFFF',
+            carddark: '#1E293B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* RTL STYLES */
+    [dir="rtl"] {
+      direction: rtl;
+      text-align: right;
+    }
+
+    [dir="rtl"] input,
+    [dir="rtl"] textarea,
+    [dir="rtl"] select {
+      text-align: right;
+    }
+
+    /* NAVBAR STYLES - keep existing */
+    [dir="rtl"] nav>.max-w-7xl {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] #navbar-default>ul {
+      flex-direction: row-reverse;
+    }
+
+    /* RESPONSIVE STYLES */
+    @media (max-width: 800px) {
+      #navbar-default {
+        display: none !important;
+      }
+      .register {
+        display: none !important;
+      }
+      #rtl-toggle,
+      #theme-toggle {
+        display: none !important;
+      }
+      #menuBtn {
+        display: block !important;
+      }
+    }
+
+    /* CONTACT PAGE SPECIFIC STYLES - FIXED */
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #7F00FF, #00C2FF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* FIXED: Card styles with proper dark mode */
+    .contact-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dark .contact-card {
+      background: #1E293B;
+      border: 1px solid #334155;
+    }
+
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .hover-lift:hover {
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+    }
+
+    /* Form input styles */
+    .form-input {
+      background: #F9FAFB;
+      border: 1px solid #D1D5DB;
+      color: #1F2937;
+      transition: all 0.3s ease;
+    }
+
+    .dark .form-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #4B5563;
+      color: #F9FAFB;
+    }
+
+    .form-input:focus {
+      border-color: #7F00FF;
+      box-shadow: 0 0 0 3px rgba(127, 0, 255, 0.1);
+      outline: none;
+    }
+
+    .dark .form-input:focus {
+      border-color: #7F00FF;
+      box-shadow: 0 0 0 3px rgba(127, 0, 255, 0.2);
+    }
+
+    /* Team card styles - FIXED */
+    .team-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      transition: all 0.3s ease;
+    }
+
+    .dark .team-card {
+      background: #1E293B;
+      border: 1px solid #334155;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: #7F00FF;
+    }
+
+    /* Social icon styles */
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F3F4F6;
+      color: #4B5563;
+      transition: all 0.3s ease;
+    }
+
+    .dark .social-icon {
+      background: rgba(255, 255, 255, 0.05);
+      color: #D1D5DB;
+    }
+
+    .social-icon:hover {
+      background: #7F00FF;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Quick help links */
+    .bg-hover {
+      background-color: #F9FAFB;
+    }
+
+    .dark .bg-hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .bg-hover:hover {
+      background-color: #F3F4F6;
+    }
+
+    .dark .bg-hover:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Gradient button */
+    .gradient-btn {
+      background: linear-gradient(135deg, #7F00FF, #00C2FF);
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .gradient-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(127, 0, 255, 0.3);
+    }
+
+    /* Success message */
+    .success-message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+      z-index: 1000;
+      transform: translateY(-100px);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .success-message.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* Map container */
+    .map-container {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #E5E7EB;
+    }
+
+    .dark .map-container {
+      border: 1px solid #334155;
+    }
+
+    /* Text muted */
+    .text-muted {
+      color: #6B7280;
+    }
+
+    .dark .text-muted {
+      color: #9CA3AF;
+    }
+@media (max-width:1028px){
+  #navbar-default{
+    font-size:11px;
+    gap:18px;
+  }
+}
+  .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+
+    /* Keep existing navbar styles - truncated for brevity */
+    /* ... existing navbar styles ... */
+  </style>
+</head>
+
+<body class="pt-[72px] bg-soft dark:bg-deep text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+  <!-- Navbar - Keep existing code -->
+  
+<nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+    </a>
+
+    <!-- Hamburger button for mobile -->
+<button
+  id="menuBtn"
+  class="lg:hidden text-violet"
+>
+  ☰
+</button>
+
+    <!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="hidden lg:hidden absolute top-full left-0 w-full"
+>
+      <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
+        
+        <!-- Home submenu -->
+      <!-- Home submenu -->
+<li>
+  <button onclick="toggleSubMenu('homeSub')" class="mobile-toggle w-full flex items-center justify-between">
+    <span class="label">Home</span>
+    <span class="arrow rtl:rotate-180">▼</span>
+  </button>
+  <ul id="homeSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+      <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+  </ul>
+</li>
+
+        <!-- Other menu items -->
+              <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+
+        <!-- Dashboard submenu -->
+        <li>
+          <button onclick="toggleSubMenu('dashSub')" class="mobile-toggle w-full flex items-center justify-between">
+            <span class="label">Dashboard</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul id="dashSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+                   <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+        <!-- Theme & RTL toggles -->
+        <li>
+          <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            🌙 Dark / Light
+          </button>
+        </li>
+        <li>
+          <button id="mobile-rtl-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            RTL / LTR
+          </button>
+        </li>
+
+        <!-- New Sign Up & Login buttons for mobile -->
+        <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                <a href="register.html">Register</a>
+          </button>
+        </li>
+           <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                <a href="login.html">Login</a>
+          </button>
+        </li>
+       
+        
+
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
+     <div class="menu hidden md:flex items-center list-none gap-6" id="navbar-default">
+<ul class="list hidden lg:flex gap-4">
+  <!-- <li>Home</li>
+  <li>About</li> -->
+</ul>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('homeMenu')" class="hover:text-violet transition flex items-center gap-1">Home ▼</button>
+          <ul id="homeMenu" class="hidden absolute left-0 mt-3 w-40 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('dashMenu')" class="hover:text-violet transition flex items-center gap-1">Dashboard ▼</button>
+          <ul id="dashMenu" class="hidden absolute right-0 mt-3 w-44 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <!-- Theme & RTL toggles -->
+      <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1">🌙</button>
+      <button id="rtl-toggle" class="text-xs uppercase border px-2 py-1 rounded hover:bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:text-white dark:hover:bg-white dark:hover:text-black">RTL/LTR</button>
+
+      <!-- New Sign Up & Login buttons for desktop -->
+      <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Register</a>
+      <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+  <main class="container mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-16 fade-in">
+      <h1 class="heading-font text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Get In <span class="gradient-text">Touch</span>
+      </h1>
+      <p class="text-xl text-muted max-w-3xl mx-auto mb-8">
+        Have questions about growing your band's reach? Want to collaborate or book a demo?
+        Our team is here to help you amplify your artistry.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Contact Form - FIXED -->
+      <div class="lg:col-span-2">
+        <div class="contact-card rounded-2xl p-8 md:p-10 hover-lift fade-in">
+          <div class="flex items-center mb-10">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-r from-violet to-blue flex items-center justify-center mr-4">
+              <i class="fas fa-envelope text-white text-2xl"></i>
+            </div>
+            <div>
+              <h2 class="heading-font text-3xl font-bold">Send Us a Message</h2>
+              <p class="text-muted">Fill out the form below and we'll respond promptly</p>
+            </div>
+          </div>
+
+          <form id="contactForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="fade-in" style="animation-delay: 0.1s">
+                <label class="block text-sm font-medium mb-2">Full Name *</label>
+                <input type="text" required class="w-full px-4 py-3 rounded-xl form-input focus:outline-none"
+                  placeholder="Enter your full name">
+              </div>
+              <div class="fade-in" style="animation-delay: 0.2s">
+                <label class="block text-sm font-medium mb-2">Email Address *</label>
+                <input type="email" required class="w-full px-4 py-3 rounded-xl form-input focus:outline-none"
+                  placeholder="you@example.com">
+              </div>
+            </div>
+
+            <div class="fade-in" style="animation-delay: 0.3s">
+              <label class="block text-sm font-medium mb-2">Subject *</label>
+              <input type="text" required class="w-full px-4 py-3 rounded-xl form-input focus:outline-none"
+                placeholder="What is this regarding?">
+            </div>
+
+            <div class="fade-in" style="animation-delay: 0.4s">
+              <label class="block text-sm font-medium mb-2">Inquiry Type *</label>
+              <select class="w-full px-4 py-3 rounded-xl form-input focus:outline-none">
+                <option value="">Select an option</option>
+                <option value="booking">Band Booking</option>
+                <option value="collaboration">Artist Collaboration</option>
+                <option value="support">Technical Support</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="fade-in" style="animation-delay: 0.5s">
+              <label class="block text-sm font-medium mb-2">Message *</label>
+              <textarea rows="6" required class="w-full px-4 py-3 rounded-xl form-input focus:outline-none resize-none"
+                placeholder="Tell us about your inquiry..."></textarea>
+            </div>
+
+            <div class="fade-in" style="animation-delay: 0.6s">
+              <label class="flex items-center">
+                <input type="checkbox" class="mr-2 w-5 h-5 rounded form-input">
+                <span class="text-sm text-muted">Subscribe to our newsletter for band growth tips</span>
+              </label>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl gradient-btn font-bold text-lg hover-lift fade-in"
+              style="animation-delay: 0.7s">
+              <i class="fas fa-paper-plane mr-2"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Map Section - FIXED -->
+        <div class="mt-12 fade-in" style="animation-delay: 0.8s">
+          <h3 class="heading-font text-2xl font-bold mb-6">Our Locations</h3>
+          <div class="map-container">
+            <div class="h-64 md:h-80 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 relative overflow-hidden rounded-2xl">
+              <div class="absolute inset-0">
+                <iframe class="w-full h-full rounded-2xl grayscale-[20%] hover:grayscale-0 transition duration-500"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153159!3d-37.81627974202161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f5c5ad%3A0x5045675218ce6e0!2sMusic%20Venue!5e0!3m2!1sen!2sin!4v1700000000000"
+                  style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+                <!-- Overlay Label -->
+                <div class="absolute top-4 right-4 bg-purple-600/90 text-white px-3 py-1 rounded-full text-sm backdrop-blur">
+                  <i class="fas fa-map-pin mr-1"></i> Interactive Map
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info & Team - FIXED -->
+      <div class="space-y-12">
+        <!-- Quick Contact - FIXED -->
+        <div class="contact-card p-8 hover-lift fade-in">
+          <h3 class="heading-font text-2xl font-bold mb-8">Quick Contact</h3>
+
+          <div class="space-y-8">
+            <div class="flex items-start group cursor-pointer">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-violet to-blue flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-phone-alt text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-lg mb-1">Call Us</h4>
+                <p class="text-muted mb-2">Available 9AM - 9PM EST</p>
+                <p class="text-sm font-bold gradient-text">+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="flex items-start group cursor-pointer">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-violet to-blue flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-envelope-open-text text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-lg mb-1">Email Us</h4>
+                <p class="text-muted mb-2">General inquiries</p>
+                <p class="text-sm font-bold gradient-text">contact@groww.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-start group cursor-pointer">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-violet to-blue flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-music text-white text-lg"></i>
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold text-lg mb-1">Artist Support</h4>
+                <p class="text-muted mb-2">For registered artists</p>
+                <p class="text-sm font-bold gradient-text">support@groww.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-gray-300 dark:border-gray-700">
+            <h4 class="font-bold text-lg mb-4">Connect With Us</h4>
+            <div class="flex space-x-3">
+              <a href="#" class="social-icon hover-lift">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon hover-lift">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon hover-lift">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon hover-lift">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-icon hover-lift">
+                <i class="fab fa-spotify"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support Team - FIXED -->
+        <div class="contact-card rounded-2xl p-8 hover-lift fade-in">
+          <h3 class="heading-font text-2xl font-bold mb-8">Meet Our Team</h3>
+
+          <div class="space-y-6">
+            <div class="team-card p-4 rounded-xl flex items-center hover-lift cursor-pointer">
+              <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-violet">
+                <img src="https://images.unsplash.com/photo-1507019403270-cca502add9f8?w=200&h=200&fit=crop&crop=face"
+                  alt="Team Member" class="w-full h-full object-cover">
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <p class="text-sm text-muted">Artist Relations Manager</p>
+                <p class="text-xs text-violet dark:text-violet-400 mt-1">
+                  <i class="fas fa-star mr-1"></i> Available Now
+                </p>
+              </div>
+            </div>
+
+            <div class="team-card p-4 rounded-xl flex items-center hover-lift cursor-pointer">
+              <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-amber-500">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
+                  alt="Team Member" class="w-full h-full object-cover">
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Michael Chen</h4>
+                <p class="text-sm text-muted">Technical Support Lead</p>
+                <p class="text-xs text-amber-600 dark:text-amber-400 mt-1">
+                  <i class="fas fa-headphones mr-1"></i> Online
+                </p>
+              </div>
+            </div>
+
+            <div class="team-card p-4 rounded-xl flex items-center hover-lift cursor-pointer">
+              <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-green-500">
+                <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=200&h=200&fit=crop&crop=face"
+                  alt="Team Member" class="w-full h-full object-cover">
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Emma Rodriguez</h4>
+                <p class="text-sm text-muted">Booking Coordinator</p>
+                <p class="text-xs text-green-600 dark:text-green-400 mt-1">
+                  <i class="fas fa-calendar-check mr-1"></i> Booking Specialist
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="w-full mt-8 py-3 border border-violet text-violet dark:text-violet-300 hover:bg-violet hover:text-white dark:hover:bg-violet/20 rounded-xl font-medium hover-lift transition-all duration-300">
+            <i class="fas fa-comments mr-2"></i>
+            Live Chat Support
+          </button>
+        </div>
+
+        <!-- FAQ Quick Links - FIXED -->
+        <div class="contact-card rounded-2xl p-8 hover-lift fade-in">
+          <h3 class="heading-font text-2xl font-bold mb-6">Quick Help</h3>
+          <div class="space-y-4">
+            <a href="#"
+              class="flex items-center justify-between p-3 rounded-lg bg-hover hover:bg-hover group transition-colors duration-300">
+              <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-3">
+                  <i class="fas fa-question text-purple-600 dark:text-purple-400 text-sm"></i>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">How to book a band?</span>
+              </div>
+              <i class="fas fa-chevron-right text-sm text-gray-400 group-hover:text-purple-500"></i>
+            </a>
+
+            <a href="#"
+              class="flex items-center justify-between p-3 rounded-lg bg-hover hover:bg-hover group transition-colors duration-300">
+              <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mr-3">
+                  <i class="fas fa-file-contract text-amber-600 dark:text-amber-400 text-sm"></i>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">Artist agreement terms</span>
+              </div>
+              <i class="fas fa-chevron-right text-sm text-gray-400 group-hover:text-amber-500"></i>
+            </a>
+
+            <a href="#"
+              class="flex items-center justify-between p-3 rounded-lg bg-hover hover:bg-hover group transition-colors duration-300">
+              <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3">
+                  <i class="fas fa-chart-line text-green-600 dark:text-green-400 text-sm"></i>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">Promotion guide for bands</span>
+              </div>
+              <i class="fas fa-chevron-right text-sm text-gray-400 group-hover:text-green-500"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section - FIXED -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="contact-card rounded-2xl p-6 text-center hover-lift fade-in">
+        <div class="text-3xl font-bold gradient-text mb-2">24/7</div>
+        <p class="text-muted">Support Available</p>
+      </div>
+      <div class="contact-card rounded-2xl p-6 text-center hover-lift fade-in" style="animation-delay: 0.1s">
+        <div class="text-3xl font-bold gradient-text mb-2">2h</div>
+        <p class="text-muted">Average Response Time</p>
+      </div>
+      <div class="contact-card rounded-2xl p-6 text-center hover-lift fade-in" style="animation-delay: 0.2s">
+        <div class="text-3xl font-bold gradient-text mb-2">98%</div>
+        <p class="text-muted">Satisfaction Rate</p>
+      </div>
+      <div class="contact-card rounded-2xl p-6 text-center hover-lift fade-in" style="animation-delay: 0.3s">
+        <div class="text-3xl font-bold gradient-text mb-2">5000+</div>
+        <p class="text-muted">Artists Supported</p>
+      </div>
+    </div>
+
+    <!-- Newsletter - FIXED -->
+    <div class="mt-20 contact-card rounded-2xl p-8 md:p-12 text-center hover-lift fade-in">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="heading-font text-3xl font-bold mb-4">Stay Updated with Music Insights</h2>
+        <p class="text-muted mb-8">Subscribe to our newsletter for band growth tips, industry news, and exclusive opportunities.</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input type="email" class="flex-grow px-4 py-3 rounded-xl form-input focus:outline-none"
+            placeholder="Your email address">
+          <button class="px-8 py-3 rounded-xl gradient-btn font-medium hover-lift">
+            Subscribe
+          </button>
+        </div>
+
+        <p class="text-sm text-muted mt-4">No spam, unsubscribe anytime.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Success Message -->
+  <div id="successMessage" class="success-message">
+    <div class="flex items-center">
+      <i class="fas fa-check-circle text-2xl mr-3"></i>
+      <div>
+        <h4 class="font-bold">Message Sent Successfully!</h4>
+        <p class="text-sm opacity-90">We'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+
+<footer class="bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-white pt-20 pb-10 px-6" dir="ltr">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    
+    <!-- Newsletter / Sign Up -->
+    <div>
+  <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="w-1 h-6 bg-violet/40"></span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>      <p class="text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
+
+      <form class="flex flex-col sm:flex-row gap-4 rtl:flex-row-reverse">
+        <input type="email" placeholder="ENTER YOUR EMAIL"
+          class="bg-transparent border-2 border-white placeholder-white/60 px-6 py-4 outline-none focus:bg-white/5 w-full font-bold text-white">
+        <button type="submit"
+          class="bg-white text-violet px-8 py-4 font-bold uppercase hover:bg-blue hover:text-white transition-colors whitespace-nowrap">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-14 gap-10 rtl:text-right">
+      
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About</a></li>
+        <li><a href="programs.html" class="hover:underline">Programs</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Instagram</a></li>
+        <li><a href="#" class="hover:underline">Twitter</a></li>
+        <li><a href="#" class="hover:underline">TikTok</a></li>
+        <li><a href="#" class="hover:underline">Youtube</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Concert</a></li>
+        <li><a href="#" class="hover:underline">Press Kit</a></li>
+        <li><a href="#" class="hover:underline">Privacy</a></li>
+        <li><a href="#" class="hover:underline">Bookings</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-wider rtl:text-right">
+    <span>&copy; 2025 The Groww-Band Music Group.</span>
+  </div>
+</footer>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+      html.classList.toggle('dark');
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', toggleTheme);
+    }
+
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    if (contactForm && successMessage) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        successMessage.classList.add('show');
+        contactForm.reset();
+        
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 5000);
+      });
+    }
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    // Submenu toggle for mobile
+    function toggleSubMenu(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle("hidden");
+    }
+
+    // Dropdown toggle for desktop
+    function toggleDropdown(id) {
+      document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+        if (menu.id !== id) menu.classList.add('hidden');
+      });
+      document.getElementById(id).classList.toggle('hidden');
+    }
+  </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

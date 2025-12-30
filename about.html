@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en" class="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Music Artistry Site — Violet & Blue Theme</title>
+      <link rel="icon" href="growwpark_logo.jpg">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="·.¸¸.·♩♪♫ Font Style ♫♪♩·.¸¸.·" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .artist-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+    .artist-img { filter: grayscale(100%); transition: all 0.5s ease; }
+   
+  [dir="rtl"] #mobile-menu {
+    direction: rtl;
+  }
+
+/* ===============================
+   COMPLETE RTL SOLUTION FOR BOTH DESKTOP & MOBILE
+================================ */
+
+/* NAVBAR CONTAINER - Works for both desktop and mobile */
+[dir="rtl"] nav > .max-w-7xl {
+  flex-direction: row-reverse;
+}
+
+/* LOGO - Move to right in RTL */
+[dir="rtl"] nav > .max-w-7xl > a:first-child {
+  order: 2;
+  margin-left: auto;
+}
+
+/* DESKTOP MENU (md: and up) */
+@media (min-width: 768px) {
+  [dir="rtl"] #navbar-default > ul {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] #navbar-default {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  /* Desktop dropdown positioning */
+  [dir="rtl"] #homeMenu {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right;
+  }
+  
+  [dir="rtl"] #dashMenu {
+    right: auto !important;
+    left: 0 !important;
+    text-align: right;
+  }
+}
+
+/* MOBILE MENU */
+[dir="rtl"] #mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .mobile-toggle {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .arrow {
+  transform: rotate(180deg);
+  order: -1;
+}
+
+[dir="rtl"] #mobile-menu ul ul {
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
+  text-align: right;
+}
+
+/* Mobile hamburger button stays on left in RTL */
+[dir="rtl"] #menu-btn {
+  order: 1;
+}
+/* DEBUG STYLES - Remove after confirming RTL works */
+[dir="rtl"] nav > .max-w-7xl {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+[dir="rtl"] #mobile-menu {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+@media (max-width:800px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:800px){
+.register{
+  display:none;
+}
+}
+@media (max-width: 800px) {
+    #menu-btn {
+        display: block;
+        margin-left:450px;
+    }
+}
+@media (max-width: 800px) {
+    #rtl-toggle {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    #theme-toggle {
+        display: none;
+    }
+}
+@media (max-width: 1280px) {
+    .list li{
+        display: none !important;
+    }
+}
+@media (max-width: 1280px) {
+    .menu{
+       list-style-type: none;
+      margin-right: 50px;
+    }
+}
+@media (max-width:820px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:1440px){
+.links ul {
+  display:none;
+}
+}
+@media (max-width: 1280px) {
+    #navbar-default {
+        gap: 17px;
+    }
+}
+@media (max-width: 1024px) {
+    #navbar-default {
+        gap: 17px;
+        font-size:10px;
+    }
+}
+
+  </style>
+</head>
+
+<body class=" pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-arial">
+
+<nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+    </a>
+
+    <!-- Hamburger button for mobile -->
+<button
+  id="menuBtn"
+  class="lg:hidden text-violet"
+>
+  ☰
+</button>
+
+    <!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="hidden lg:hidden absolute top-full left-0 w-full"
+>
+      <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
+        
+        <!-- Home submenu -->
+      <!-- Home submenu -->
+<li>
+  <button onclick="toggleSubMenu('homeSub')" class="mobile-toggle w-full flex items-center justify-between">
+    <span class="label">Home</span>
+    <span class="arrow rtl:rotate-180">▼</span>
+  </button>
+  <ul id="homeSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+      <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+  </ul>
+</li>
+
+        <!-- Other menu items -->
+              <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <!-- Dashboard submenu -->
+        <li>
+          <button onclick="toggleSubMenu('dashSub')" class="mobile-toggle w-full flex items-center justify-between">
+            <span class="label">Dashboard</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul id="dashSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+                   <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+        <!-- Theme & RTL toggles -->
+        <li>
+          <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            🌙 Dark / Light
+          </button>
+        </li>
+        <li>
+          <button id="mobile-rtl-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            RTL / LTR
+          </button>
+        </li>
+
+        <!-- New Sign Up & Login buttons for mobile -->
+        <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                  <a href="register.html">Register</a>
+
+          </button>
+        </li>
+         <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                  <a href="login.html">Login</a>
+
+          </button>
+        </li>
+       
+        
+
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="menu hidden md:flex items-center list-none gap-6" id="navbar-default">
+<ul class="list hidden lg:flex gap-4">
+  <!-- <li>Home</li>
+  <li>About</li> -->
+</ul>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('homeMenu')" class="hover:text-violet transition flex items-center gap-1">Home ▼</button>
+          <ul id="homeMenu" class="hidden absolute left-0 mt-3 w-40 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('dashMenu')" class="hover:text-violet transition flex items-center gap-1">Dashboard ▼</button>
+          <ul id="dashMenu" class="hidden absolute right-0 mt-3 w-44 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <!-- Theme & RTL toggles -->
+      <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1">🌙</button>
+      <button id="rtl-toggle" class="text-xs uppercase border px-2 py-1 rounded hover:bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:text-white dark:hover:bg-white dark:hover:text-black">RTL/LTR</button>
+
+      <!-- New Sign Up & Login buttons for desktop -->
+      <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Register</a>
+      <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+
+ 
+
+
+ 
+    <style>
+        :root {
+            --primary: #7F00FF;
+            --secondary:#dd18a2;
+            --accent: #F59E0B;
+            --bg-color: #0A0F1F;
+            --text-color: #F5F7FA;
+            --card-bg: rgba(31, 41, 55, 0.8);
+            --muted-text: #94A3B8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: all 0.4s ease;
+        }
+
+        body.light-mode {
+            --bg-color: #F5F7FA;
+            --text-color: #1F2937;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --muted-text: #6B7280;
+        }
+
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        /* .card-glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(127, 0, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        } */
+
+        body.light-mode .card-glass {
+            border: 1px solid rgba(127, 0, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(127, 0, 255, 0.05);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(127, 0, 255, 0.2);
+        }
+
+        body.light-mode .hover-lift:hover {
+            box-shadow: 0 20px 40px rgba(127, 0, 255, 0.1);
+        }
+
+        .floating-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 6px 20px rgba(127, 0, 255, 0.4);
+        }
+
+        .control-btn .fa-sun {
+            display: none;
+        }
+
+        body.light-mode .control-btn .fa-sun {
+            display: block;
+        }
+
+        body.light-mode .control-btn .fa-moon {
+            display: none;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        .music-wave {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .music-wave::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(127, 0, 255, 0.1), transparent);
+            animation: wave 3s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(127, 0, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .team-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(127, 0, 255, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-card:hover::after {
+            opacity: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .text-muted {
+            color: var(--muted-text);
+        }
+
+        .value-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .value-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .value-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .feature-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 2px solid rgba(127, 0, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(127, 0, 255, 0.2);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(127, 0, 255, 0.7) 100%);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .floating-controls {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .control-btn {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .feature-image {
+                width: 60px;
+                height: 60px;
+            }
+        }
+   
+  .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Component 1: Hero Section -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-16">
+                <h1 class="heading-font text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Amplifying <span class="gradient-text">Artistry</span>, 
+                    <span class="block mt-2">Connecting <span class="gradient-text">Souls</span></span>
+                </h1>
+                <p class="text-xl text-muted max-w-3xl mx-auto mb-10">
+                    Groww is more than a platform—it's a movement. We bridge the gap between talented musicians 
+                    and passionate audiences, creating unforgettable musical experiences worldwide.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="px-8 py-3 rounded-full gradient-bg text-white font-semibold hover-lift">
+                        <i class="fas fa-play-circle mr-2"></i> Our Story
+                    </button>
+                    <button class="px-8 py-3 rounded-full border-2 border-purple-500 text-purple-300 hover:bg-purple-900/30 font-semibold hover-lift">
+                        <i class="fas fa-users mr-2"></i> Join Community
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-1">
+                    <div class="mb-6 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Artist First" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Artist First</h3>
+                    <p class="text-muted">We prioritize artist growth, fair compensation, and creative freedom above all else.</p>
+                </div>
+
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-2">
+                    <div class="mb-6 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Global Reach" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Global Reach</h3>
+                    <p class="text-muted">Connecting artists with audiences across 150+ countries through innovative technology.</p>
+                </div>
+
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-3">
+                    <div class="mb-6 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Community Driven" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Community Driven</h3>
+                    <p class="text-muted">Built by musicians, for musicians. Every feature is designed with artist input.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 2: Stats & Impact -->
+        <section class="mb-20 music-wave py-12 rounded-3xl">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-chart-line text-purple-400 mr-3"></i>
+                    Our Impact in Numbers
+                </h2>
+                <p class="text-muted text-lg">Transforming the music industry one artist at a time</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-card card-glass rounded-2xl p-8 text-center hover-lift fade-in delay-1">
+                    <div class="text-4xl font-bold gradient-text mb-2">10K+</div>
+                    <p class="text-muted">Artists Empowered</p>
+                    <div class="mt-4 h-1 w-20 mx-auto gradient-bg rounded-full"></div>
+                </div>
+
+                <div class="stat-card card-glass rounded-2xl p-8 text-center hover-lift fade-in delay-2">
+                    <div class="text-4xl font-bold gradient-text mb-2">25M+</div>
+                    <p class="text-muted">Artist Earnings</p>
+                    <div class="mt-4 h-1 w-20 mx-auto gradient-bg rounded-full"></div>
+                </div>
+
+                <div class="stat-card card-glass rounded-2xl p-8 text-center hover-lift fade-in delay-3">
+                    <div class="text-4xl font-bold gradient-text mb-2">500K+</div>
+                    <p class="text-muted">Gigs Booked</p>
+                    <div class="mt-4 h-1 w-20 mx-auto gradient-bg rounded-full"></div>
+                </div>
+
+                <div class="stat-card card-glass rounded-2xl p-8 text-center hover-lift fade-in delay-4">
+                    <div class="text-4xl font-bold gradient-text mb-2">150+</div>
+                    <p class="text-muted">Countries Reached</p>
+                    <div class="mt-4 h-1 w-20 mx-auto gradient-bg rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Growth Chart" class="feature-image mr-4">
+                        <h3 class="text-2xl font-bold">Monthly Growth</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Artist Signups</span>
+                                <span class="font-bold text-green-400">+42%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                <div class="h-full gradient-bg rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Gig Bookings</span>
+                                <span class="font-bold text-green-400">+31%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                <div class="h-full gradient-bg rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Audience Reach</span>
+                                <span class="font-bold text-green-400">+58%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                <div class="h-full gradient-bg rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-1">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Success Stories" class="feature-image mr-4">
+                        <h3 class="text-2xl font-bold">Success Stories</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Indie Artist" class="w-10 h-10 rounded-full mr-3 object-cover">
+                            <div>
+                                <h4 class="font-bold">Indie to International</h4>
+                                <p class="text-sm text-muted">235 indie artists went global through Groww</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Sold Out" class="w-10 h-10 rounded-full mr-3 object-cover">
+                            <div>
+                                <h4 class="font-bold">Sold Out Tours</h4>
+                                <p class="text-sm text-muted">87% of featured artists booked sold-out shows</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 alt="Album" class="w-10 h-10 rounded-full mr-3 object-cover">
+                            <div>
+                                <h4 class="font-bold">Album Success</h4>
+                                <p class="text-sm text-muted">312 albums launched successfully via platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 3: Our Journey Timeline -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-road text-blue-400 mr-3"></i>
+                    Our Journey
+                </h2>
+                <p class="text-muted text-lg">From a simple idea to revolutionizing artist-platform relationships</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="timeline-item mb-12 fade-in delay-1">
+                        <div class="card-glass rounded-2xl p-8 ml-8 hover-lift">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                     alt="2018" class="w-12 h-12 rounded-full mr-4 object-cover">
+                                <div>
+                                    <span class="px-4 py-1 rounded-full gradient-bg text-white text-sm font-bold">2018</span>
+                                    <span class="ml-4 text-sm text-muted">The Beginning</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Founding Vision</h3>
+                            <p class="text-muted">Three musicians envisioned a platform that truly understood artist needs. Started in a small garage studio with just $5,000 seed funding.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-12 fade-in delay-2">
+                        <div class="card-glass rounded-2xl p-8 ml-8 hover-lift">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                     alt="2019" class="w-12 h-12 rounded-full mr-4 object-cover">
+                                <div>
+                                    <span class="px-4 py-1 rounded-full gradient-bg text-white text-sm font-bold">2019</span>
+                                    <span class="ml-4 text-sm text-muted">First Milestone</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Launch & Initial Growth</h3>
+                            <p class="text-muted">Launched MVP with 50 pioneering artists. Secured first $1M in funding. Helped artists book over 1,000 gigs in first year.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item mb-12 fade-in delay-3">
+                        <div class="card-glass rounded-2xl p-8 ml-8 hover-lift">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                     alt="2020-2021" class="w-12 h-12 rounded-full mr-4 object-cover">
+                                <div>
+                                    <span class="px-4 py-1 rounded-full gradient-bg text-white text-sm font-bold">2020-2021</span>
+                                    <span class="ml-4 text-sm text-muted">Pandemic Innovation</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Virtual Concerts & Expansion</h3>
+                            <p class="text-muted">Pioneered virtual concert technology during lockdowns. Expanded to 25 new countries. Reached 5,000+ artist milestone.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in delay-4">
+                        <div class="card-glass rounded-2xl p-8 ml-8 hover-lift">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                     alt="2022-Present" class="w-12 h-12 rounded-full mr-4 object-cover">
+                                <div>
+                                    <span class="px-4 py-1 rounded-full gradient-bg text-white text-sm font-bold">2022-Present</span>
+                                    <span class="ml-4 text-sm text-muted">Global Leadership</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Industry Transformation</h3>
+                            <p class="text-muted">Introduced AI-powered artist matching. Partnered with major festivals worldwide. Became the fastest-growing artist platform globally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 4: Leadership Team -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-users text-amber-400 mr-3"></i>
+                    Meet Our Visionaries
+                </h2>
+                <p class="text-muted text-lg">The passionate team driving the music revolution forward</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="team-card card-glass rounded-2xl overflow-hidden hover-lift fade-in delay-1">
+                    <div class="h-64 relative overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=bcGyGG1qPMyxl3rw4TCVwbJLZTPabFg4twsVFDy-ixs=" 
+                             alt="Alex Morgan" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center hover:bg-purple-700">
+                                    <i class="fab fa-twitter text-sm">📩</i>
+                                </a>
+                                <a href="#" class="w-8 h-8 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center hover:bg-purple-700">
+                                    <i class="fab fa-linkedin text-sm">🌐</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Alex Morgan</h3>
+                        <p class="text-purple-400 font-medium mb-3">Founder & CEO</p>
+                        <p class="text-muted text-sm">Former touring musician with 15+ years industry experience. Founded Groww after facing booking challenges firsthand.</p>
+                    </div>
+                </div>
+
+                <div class="team-card card-glass rounded-2xl overflow-hidden hover-lift fade-in delay-2">
+                    <div class="h-64 relative overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/953587362/photo/businessman-standing-with-his-arms-folded-stock-image.webp?a=1&b=1&s=612x612&w=0&k=20&c=mPW5qvGvDq-8SAiavlGhqT5p3eiur2DqdhSmYCUfPgY=" 
+                             alt="Sarah Chen" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center hover:bg-purple-700">
+                                    <i class="fab fa-twitter text-sm">📩</i>
+                                </a>
+                                <a href="#" class="w-8 h-8 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center hover:bg-purple-700">
+                                    <i class="fab fa-linkedin text-sm">🌐</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Sarah Chen</h3>
+                        <p class="text-blue-400 font-medium mb-3">Chief Technology Officer</p>
+                        <p class="text-muted text-sm">Ex-Google engineer passionate about music tech. Built our proprietary matching algorithms and virtual stage tech.</p>
+                    </div>
+                </div>
+
+                <div class="team-card card-glass rounded-2xl overflow-hidden hover-lift fade-in delay-3">
+                    <div class="h-64 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Marcus Johnson" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="flex space-x-2">
+                                <a href="#" class="w-8 h-8 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center hover:bg-purple-700">
+                                    <i class="fab fa-twitter text-sm">📩</i>
+                                </a>
+                                <a href="#" class="w-8 h-8 rounded-full bg-purple-600/80 backdrop-blur flex items-center justify-center hover:bg-purple-700">
+                                    <i class="fab fa-linkedin text-sm">🌐</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Marcus Johnson</h3>
+                        <p class="text-amber-400 font-medium mb-3">Head of Artist Relations</p>
+                        <p class="text-muted text-sm">Former Grammy-nominated producer. Ensures every artist gets personalized support and growth opportunities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center fade-in delay-4">
+                <button class="px-8 py-3 rounded-full border-2 border-purple-500 text-purple-300 hover:bg-purple-900/30 font-semibold hover-lift">
+                    <i class="fas fa-briefcase mr-2"></i> View All Open Positions
+                </button>
+            </div>
+        </section>
+
+        <!-- Component 5: Core Values -->
+        <section class="mb-20 music-wave py-12 rounded-3xl fade-in">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-star text-purple-400 mr-3"></i>
+                    Our Guiding Principles
+                </h2>
+                <p class="text-muted text-lg">The values that shape everything we do</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="value-card card-glass hover-lift fade-in delay-1">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Transparency" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Transparency First</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-muted">No hidden fees, no fine print. We believe in clear communication and honest partnerships with every artist.</p>
+                        <div class="mt-4 pt-4 border-t border-purple-500/20">
+                            <p class="text-sm font-bold gradient-text">100% Fee Transparency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card card-glass hover-lift fade-in delay-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Wellbeing" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Artist Wellbeing</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-muted">Mental health resources, fair pay advocacy, and sustainable touring support are built into our platform.</p>
+                        <div class="mt-4 pt-4 border-t border-purple-500/20">
+                            <p class="text-sm font-bold gradient-text">Wellness Programs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card card-glass hover-lift fade-in delay-3">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Innovation" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Innovation Mindset</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-muted">Constantly evolving with cutting-edge tech to solve real artist problems and create new opportunities.</p>
+                        <div class="mt-4 pt-4 border-t border-purple-500/20">
+                            <p class="text-sm font-bold gradient-text">Monthly Feature Updates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card card-glass hover-lift fade-in delay-4">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Community" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Community Power</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-muted">Our platform thrives on collaboration. Artists help shape features through our active feedback system.</p>
+                        <div class="mt-4 pt-4 border-t border-purple-500/20">
+                            <p class="text-sm font-bold gradient-text">10K+ Community Inputs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card card-glass hover-lift fade-in delay-5">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Sustainable Growth" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Sustainable Growth</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-muted">Building for long-term artist success, not quick profits. Our partnerships focus on sustainable careers.</p>
+                        <div class="mt-4 pt-4 border-t border-purple-500/20">
+                            <p class="text-sm font-bold gradient-text">5-Year Artist Retention</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-card card-glass hover-lift fade-in delay-5">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2xvYmFsJTIwaW5jbHVzaW9ufGVufDB8fDB8fHww" 
+                             alt="Global Inclusion" class="w-full h-full object-cover">
+                        <div class="image-overlay"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white">Global Inclusion</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-muted">Music knows no borders. We actively work to amplify underrepresented voices and genres worldwide.</p>
+                        <div class="mt-4 pt-4 border-t border-purple-500/20">
+                            <p class="text-sm font-bold gradient-text">150+ Countries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 6: Future Vision -->
+        <section class="fade-in">
+            <div class="card-glass rounded-3xl p-8 md:p-12 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full -translate-y-32 translate-x-32"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full translate-y-24 -translate-x-24"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-center mb-12">
+                        <h2 class="heading-font text-3xl md:text-5xl font-bold mb-6">
+                            The Future of <span class="gradient-text">Music Artistry</span>
+                        </h2>
+                        <p class="text-xl text-muted max-w-3xl mx-auto">
+                            We're building the world's most comprehensive ecosystem for musical talent. 
+                            Here's what's next in our journey.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                        <div class="space-y-6">
+                            <div class="flex items-start fade-in delay-1">
+                                <div class="relative mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                         alt="AI Assistant" class="w-16 h-16 rounded-xl object-cover border-2 border-purple-500">
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+                                        <i class="fas fa-robot text-xs">↻</i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">AI Artist Assistant</h4>
+                                    <p class="text-muted">Launching personalized AI tools for songwriting, promotion, and career planning in 2024.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start fade-in delay-2">
+                                <div class="relative mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                         alt="VR Stages" class="w-16 h-16 rounded-xl object-cover border-2 border-purple-500">
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+                                        <i class="fas fa-vr-cardboard text-xs">↻</i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Immersive VR Stages</h4>
+                                    <p class="text-muted">Creating virtual reality concert venues for truly immersive global performances.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start fade-in delay-3">
+                                <div class="relative mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNhZGVteXxlbnwwfHwwfHx8MA%3D%3D" 
+                                         alt="Groww Academy" class="w-16 h-16 rounded-xl object-cover border-2 border-purple-500">
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+                                        <i class="fas fa-university text-xs">↻</i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Groww Academy</h4>
+                                    <p class="text-muted">Free educational platform for emerging artists launching Q2 2024.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start fade-in delay-1">
+                                <div class="relative mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                         alt="Artist Grants" class="w-16 h-16 rounded-xl object-cover border-2 border-purple-500">
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+                                        <i class="fas fa-hand-holding-usd text-xs">↻</i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Artist Grants Program</h4>
+                                    <p class="text-muted">$5M annual fund to support independent artists' creative projects.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start fade-in delay-2">
+                                <div class="relative mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                         alt="Radio Network" class="w-16 h-16 rounded-xl object-cover border-2 border-purple-500">
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+                                        <i class="fas fa-broadcast-tower text-xs">↻</i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Global Radio Network</h4>
+                                    <p class="text-muted">24/7 streaming radio featuring exclusively Groww artists across 200+ stations.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start fade-in delay-3">
+                                <div class="relative mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                         alt="Sustainable Touring" class="w-16 h-16 rounded-xl object-cover border-2 border-purple-500">
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full gradient-bg flex items-center justify-center">
+                                        <i class="fas fa-seedling text-xs">↻</i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Sustainable Touring</h4>
+                                    <p class="text-muted">Carbon-neutral touring initiatives and eco-friendly merch solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center fade-in delay-4">
+                        <button class="px-8 py-4 rounded-full gradient-bg text-white font-bold text-lg hover-lift">
+                            <i class="fas fa-rocket mr-2"></i> Join Our Journey
+                        </button>
+                        <p class="text-sm text-muted mt-4">Be part of the music revolution. Artists, venues, and fans welcome.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            // Save preference
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            
+            // Add animation
+            themeToggle.style.transform = 'scale(1.1) rotate(180deg)';
+            setTimeout(() => {
+                themeToggle.style.transform = '';
+            }, 300);
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section, .fade-in').forEach(el => {
+            if (!el.classList.contains('fade-in')) {
+                observer.observe(el);
+            }
+        });
+
+        // Hover effects
+        document.querySelectorAll('.hover-lift').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add interactive click effects to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(127, 0, 255, 0.3);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            button {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-white pt-20 pb-10 px-6" dir="ltr">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    
+    <!-- Newsletter / Sign Up -->
+    <div>
+  <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="w-1 h-6 bg-violet/40"></span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+            <p class="text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
+
+      <form class="flex flex-col sm:flex-row gap-4 rtl:flex-row-reverse">
+        <input type="email" placeholder="ENTER YOUR EMAIL"
+          class="bg-transparent border-2 border-white placeholder-white/60 px-6 py-4 outline-none focus:bg-white/5 w-full font-bold text-white">
+        <button type="submit"
+          class="bg-white text-violet px-8 py-4 font-bold uppercase hover:bg-blue hover:text-white transition-colors whitespace-nowrap">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-14 gap-10 rtl:text-right">
+      
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About</a></li>
+        <li><a href="programs.html" class="hover:underline">Programs</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Instagram</a></li>
+        <li><a href="#" class="hover:underline">Twitter</a></li>
+        <li><a href="#" class="hover:underline">TikTok</a></li>
+        <li><a href="#" class="hover:underline">Youtube</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Concert</a></li>
+        <li><a href="#" class="hover:underline">Press Kit</a></li>
+        <li><a href="#" class="hover:underline">Privacy</a></li>
+        <li><a href="#" class="hover:underline">Bookings</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-wider rtl:text-right">
+    <span>&copy; 2025 The Groww-Band Music Group.</span>
+  </div>
+</footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  
+  // SINGLE FUNCTION FOR RTL TOGGLE
+  function toggleRTL() {
+    const isRTL = html.getAttribute('dir') === 'rtl';
+    
+    if (isRTL) {
+      // Switch to LTR
+      html.setAttribute('dir', 'ltr');
+      html.setAttribute('lang', 'en');
+    } else {
+      // Switch to RTL
+      html.setAttribute('dir', 'rtl');
+      html.setAttribute('lang', 'ar');
+    }
+    
+    // Save preference
+    localStorage.setItem('dir', html.getAttribute('dir'));
+    
+    // Force redraw for mobile menu if it's open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.style.display = 'none';
+      setTimeout(() => {
+        mobileMenu.style.display = '';
+      }, 10);
+    }
+  }
+  
+  // FIXED THEME TOGGLE FUNCTION
+  function toggleTheme() {
+    // Check if dark class exists
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      // Switch to light mode
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    } else {
+      // Switch to dark mode
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+    
+    // Alternative: If using data-theme attribute
+    // const currentTheme = html.getAttribute('data-theme');
+    // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // html.setAttribute('data-theme', newTheme);
+    // localStorage.setItem('theme', newTheme);
+    
+    // Save theme preference
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  }
+  
+  // ===== EVENT LISTENERS =====
+  
+  // Desktop RTL toggle
+  document.getElementById('rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Mobile RTL toggle
+  document.getElementById('mobile-rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Desktop theme toggle
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // Mobile theme toggle
+  document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // ===== RESTORE SAVED SETTINGS =====
+  
+  // Restore RTL
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    html.setAttribute('dir', savedDir);
+    html.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+  }
+  
+  // Restore theme - FIXED
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    // Remove both classes first
+    document.documentElement.classList.remove('dark', 'light');
+    
+    // Add the saved theme class
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  } else {
+    // Default to light if no preference saved
+    document.documentElement.classList.add('light');
+  }
+});
+
+// Mobile menu toggle (separate from RTL)
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  }
+});
+
+// Submenu toggle for mobile
+function toggleSubMenu(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("hidden");
+}
+
+// Dropdown toggle for desktop
+function toggleDropdown(id) {
+  document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+    if (menu.id !== id) menu.classList.add('hidden');
+  });
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('li')) {
+    document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+</script>
+
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        violet: '#7F00FF',
+        blue: '#00C2FF',
+        deep: '#0A0F1F',
+        soft: '#F5F7FA'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
+      }
+    }
+  }
+  // REMOVE the RTL plugin - we'll handle it with CSS instead
+}
+</script>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>

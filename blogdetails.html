@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en" class="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Music Artistry Site — Violet & Blue Theme</title>
+      <link rel="icon" href="growwpark_logo.jpg">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .artist-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+    .artist-img { filter: grayscale(100%); transition: all 0.5s ease; }
+   
+  [dir="rtl"] #mobile-menu {
+    direction: rtl;
+  }
+
+/* ===============================
+   COMPLETE RTL SOLUTION FOR BOTH DESKTOP & MOBILE
+================================ */
+
+/* NAVBAR CONTAINER - Works for both desktop and mobile */
+[dir="rtl"] nav > .max-w-7xl {
+  flex-direction: row-reverse;
+}
+
+/* LOGO - Move to right in RTL */
+[dir="rtl"] nav > .max-w-7xl > a:first-child {
+  order: 2;
+  margin-left: auto;
+}
+
+/* DESKTOP MENU (md: and up) */
+@media (min-width: 768px) {
+  [dir="rtl"] #navbar-default > ul {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] #navbar-default {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  /* Desktop dropdown positioning */
+  [dir="rtl"] #homeMenu {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right;
+  }
+  
+  [dir="rtl"] #dashMenu {
+    right: auto !important;
+    left: 0 !important;
+    text-align: right;
+  }
+}
+
+/* MOBILE MENU */
+[dir="rtl"] #mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .mobile-toggle {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .arrow {
+  transform: rotate(180deg);
+  order: -1;
+}
+
+[dir="rtl"] #mobile-menu ul ul {
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
+  text-align: right;
+}
+
+/* Mobile hamburger button stays on left in RTL */
+[dir="rtl"] #menu-btn {
+  order: 1;
+}
+/* DEBUG STYLES - Remove after confirming RTL works */
+[dir="rtl"] nav > .max-w-7xl {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+[dir="rtl"] #mobile-menu {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+@media (max-width:800px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:800px){
+.register{
+  display:none;
+}
+}
+@media (max-width: 800px) {
+    #menuBtn {
+        display: block;
+        margin-left: 0;
+    }
+}
+@media (max-width: 800px) {
+    #rtl-toggle {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    #theme-toggle {
+        display: none;
+    }
+}
+@media (max-width: 1280px) {
+    .list li{
+        display: none !important;
+    }
+}
+@media (max-width: 1280px) {
+    .menu{
+       list-style-type: none;
+      margin-right: 50px;
+    }
+}
+@media (max-width: 1280px) {
+    #navbar-default {
+        gap: 17px;
+    }
+}
+@media (max-width:820px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:1440px){
+.links ul {
+  display:none;
+}
+}
+  .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+
+/* Blog Specific Styles */
+.font-title {
+    font-family: 'Roboto Slab', serif;
+}
+.font-body {
+    font-family: 'Poppins', sans-serif;
+}
+.gradient-text {
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.gradient-bg {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+}
+.dark .gradient-text {
+    background: linear-gradient(90deg, #a78bfa, #c4b5fd, #f0abfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.dark .gradient-bg {
+    background: linear-gradient(135deg, #a009ec, #8f7be2, #6e217b);
+}
+.blog-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+@media (min-width: 768px) {
+    .blog-content h2 {
+        font-size: 1.875rem;
+    }
+}
+.dark .blog-content h2 {
+    color: #f9fafb;
+}
+.blog-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #374151;
+}
+@media (min-width: 768px) {
+    .blog-content h3 {
+        font-size: 1.5rem;
+    }
+}
+.dark .blog-content h3 {
+    color: #e5e7eb;
+}
+.blog-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #4b5563;
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .blog-content p {
+        font-size: 1.125rem;
+    }
+}
+.dark .blog-content p {
+    color: #d1d5db;
+}
+.blog-content ul, .blog-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+.blog-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+.blog-content blockquote {
+    border-left: 4px solid #8b5cf6;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #6b7280;
+}
+.dark .blog-content blockquote {
+    color: #9ca3af;
+    border-left-color: #a78bfa;
+}
+.highlight-box {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+    border-left: 4px solid #8b5cf6;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+}
+.dark .highlight-box {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(240, 171, 252, 0.15));
+    border-left-color: #a78bfa;
+}
+.music-icon {
+    display: inline-block;
+    margin: 0 0.25rem;
+    color: #8b5cf6;
+}
+.dark .music-icon {
+    color: #a78bfa;
+}
+.sticky-sidebar {
+    position: sticky;
+    top: 2rem;
+}
+.read-more-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.read-more-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+.read-more-btn:hover:before {
+    left: 100%;
+}
+.prose {
+    max-width: 100%;
+}
+@media (min-width: 768px) {
+    .prose {
+        max-width: 65ch;
+    }
+}
+/* Responsive image fixes */
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+}
+/* Mobile fixes */
+@media (max-width: 768px) {
+    .flex-col-mobile {
+        flex-direction: column !important;
+    }
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    .space-x-4-mobile {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .justify-between-mobile {
+        justify-content: space-between !important;
+    }
+    .flex-wrap-mobile {
+        flex-wrap: wrap !important;
+    }
+    .w-full-mobile {
+        width: 100% !important;
+    }
+    .mb-4-mobile {
+        margin-bottom: 1rem !important;
+    }
+    /* Fix for mobile menu button */
+    #menuBtn {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+    /* Fix mobile menu positioning */
+    #mobileMenu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+    }
+    .dark #mobileMenu {
+        background: rgba(0, 0, 0, 0.98);
+    }
+    /* Blog content fixes */
+    .blog-content h1 {
+        font-size: 2rem !important;
+    }
+    .blog-content h2 {
+        font-size: 1.5rem !important;
+    }
+    .blog-content .flex.items-center {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .blog-content .ml-auto {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+/* Fix for conflicting theme toggle buttons */
+#blog-theme-toggle {
+    position: fixed;
+    top: 4rem;
+    right: 1rem;
+    z-index: 50;
+}
+#back-to-blog {
+    position: fixed;
+    top: 4rem;
+    left: 1rem;
+    z-index: 50;
+}
+@media (min-width: 768px) {
+    #blog-theme-toggle {
+        top: 4rem;
+        right: 2rem;
+    }
+    #back-to-blog {
+        top: 4rem;
+        left: 2rem;
+    }
+}
+@media (max-width:1024px){
+#navbar-default {
+  font-size: 11px;
+    gap: 15px;
+}
+}
+/* Ensure theme toggle works */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+  </style>
+</head>
+
+<body class="pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-sans">
+
+<nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <span class="me-auto flex items-center gap-2 px-2 sm:px-4 py-2">
+        <span class="text-lg sm:text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="text-lg sm:text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+    </a>
+
+    <!-- Hamburger button for mobile -->
+<button
+  id="menuBtn"
+  class="lg:hidden text-violet dark:text-gray-200 p-2"
+>
+  ☰
+</button>
+
+    <!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="hidden lg:hidden absolute top-full left-0 w-full"
+>
+      <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
+        
+        <!-- Home submenu -->
+      <!-- Home submenu -->
+<li>
+  <button onclick="toggleSubMenu('homeSub')" class="mobile-toggle w-full flex items-center justify-between">
+    <span class="label">Home</span>
+    <span class="arrow rtl:rotate-180">▼</span>
+  </button>
+  <ul id="homeSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+      <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+  </ul>
+</li>
+
+        <!-- Other menu items -->
+              <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <!-- Dashboard submenu -->
+        <li>
+          <button onclick="toggleSubMenu('dashSub')" class="mobile-toggle w-full flex items-center justify-between">
+            <span class="label">Dashboard</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul id="dashSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+                   <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+        <!-- Theme & RTL toggles -->
+        <li>
+          <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            🌙 Dark / Light
+          </button>
+        </li>
+        <li>
+          <button id="mobile-rtl-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            RTL / LTR
+          </button>
+        </li>
+
+        <!-- New Sign Up & Login buttons for mobile -->
+        <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                  <a href="register.html">Register</a>
+
+          </button>
+        </li>
+          <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+                  <a href="login.html">Login</a>
+
+          </button>
+        </li>
+       
+        
+
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="menu hidden lg:flex items-center list-none gap-6" id="navbar-default">
+<ul class="list hidden lg:flex gap-4">
+  <!-- <li>Home</li>
+  <li>About</li> -->
+</ul>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('homeMenu')" class="hover:text-violet transition flex items-center gap-1">Home ▼</button>
+          <ul id="homeMenu" class="hidden absolute left-0 mt-3 w-40 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('dashMenu')" class="hover:text-violet transition flex items-center gap-1">Dashboard ▼</button>
+          <ul id="dashMenu" class="hidden absolute right-0 mt-3 w-44 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <!-- Theme & RTL toggles -->
+      <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1 hidden lg:inline-flex">🌙</button>
+      <button id="rtl-toggle" class="text-xs uppercase border px-2 py-1 rounded hover:bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:text-white dark:hover:bg-white dark:hover:text-black hidden lg:inline-flex">RTL/LTR</button>
+
+      <!-- New Sign Up & Login buttons for desktop -->
+      <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition hidden lg:inline-flex">Register</a>
+      <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition hidden lg:inline-flex">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+  
+
+
+   
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 py-8 max-w-7xl">
+        <!-- Article Header -->
+        <div class="mb-12 mt-4">
+            <div class="flex items-center mb-6 flex-wrap gap-2">
+                <span class="gradient-bg text-white px-4 py-2 rounded-full text-sm font-medium"><a href="blog.html">⮜ Back</a></span>
+                <span class="hidden sm:inline text-gray-500 dark:text-gray-400">•</span>
+                <span class="text-gray-600 dark:text-gray-300">March 15, 2023</span>
+                <span class="hidden sm:inline text-gray-500 dark:text-gray-400">•</span>
+                <span class="text-gray-600 dark:text-gray-300">8 min read</span>
+            </div>
+            
+            <h1 class="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text leading-tight">
+                The Art of Building a Cohesive Band Sound
+            </h1>
+            
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl">
+                Discover how successful bands develop their unique sonic identity through collaboration, experimentation, and intentional sound design techniques.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full gradient-bg flex items-center justify-center text-white text-lg sm:text-xl font-bold mr-3 sm:mr-4">
+                        AM
+                    </div>
+                    <div>
+                        <p class="font-medium text-base sm:text-lg">Alex Morgan</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Lead Producer at Groww Studios • Music Production Expert</p>
+                    </div>
+                </div>
+                <div class="flex space-x-2 sm:space-x-4 mt-2 sm:mt-0">
+                    <button class="p-2 sm:p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fab fa-twitter text-sm sm:text-base"></i>
+                    </button>
+                    <button class="p-2 sm:p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fab fa-facebook-f text-sm sm:text-base"></i>
+                    </button>
+                    <button class="p-2 sm:p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Main Article Content -->
+            <article class="lg:w-2/3">
+                <!-- Featured Image -->
+                <div class="rounded-2xl overflow-hidden shadow-xl mb-10">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Band recording in studio" 
+                         class="w-full h-auto sm:h-[400px] md:h-[500px] object-cover">
+                    <div class="bg-gray-100 dark:bg-gray-800 p-4 text-center text-gray-600 dark:text-gray-400 text-sm">
+                        Photo by Soundtrap on Unsplash • A band working together in the studio to create their signature sound
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <div class="blog-content prose mx-auto">
+                    <!-- Introduction -->
+                    <div class="mb-10">
+                        <p class="text-lg">In the world of music, a band's sound is its fingerprint—a unique identifier that sets it apart from the thousands of other groups vying for listeners' attention. Developing a cohesive band sound isn't something that happens overnight; it's a deliberate process of exploration, collaboration, and refinement.</p>
+                        
+                        <div class="highlight-box mt-8">
+                            <div class="flex flex-col sm:flex-row items-start">
+                                <i class="fas fa-quote-left text-2xl mr-0 sm:mr-4 mb-4 sm:mb-0 text-purple-600 dark:text-purple-400"></i>
+                                <div>
+                                    <p class="text-lg font-medium">A great band sound isn't just about playing the right notes—it's about creating a unified sonic identity that resonates emotionally with your audience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 1 -->
+                    <h2>1. Understanding Your Collective Musical Identity</h2>
+                    
+                    <p>Every band member brings their own influences, techniques, and musical preferences to the table. The first step in developing a cohesive sound is to understand and embrace this diversity while finding common ground.</p>
+                    
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md mb-8">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-amber-500 mr-3"></i>
+                            Quick Exercise: Musical Influences Mapping
+                        </h3>
+                        <p>Have each band member list their top 5 musical influences. Look for overlapping artists, genres, or eras. These commonalities often form the foundation of your band's sound.</p>
+                    </div>
+                    
+                    <p>When <span class="font-semibold">The Harmonics</span> first formed, their guitarist was heavily influenced by classic rock, while their bassist leaned toward funk, and their drummer had a jazz background. Instead of seeing this as a problem, they embraced it as an opportunity to create something truly unique.</p>
+                    
+                    <div class="my-10">
+                        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Band discussing music" 
+                             class="w-full h-auto rounded-xl shadow-lg">
+                    </div>
+
+                    <!-- Section 2 -->
+                    <h2>2. The Role of Arrangement in Cohesion</h2>
+                    
+                    <p>Arrangement is where individual parts become a unified whole. It's not just about what each instrument plays, but <em>how</em> they play together.</p>
+                    
+                    <h3>Key Arrangement Principles:</h3>
+                    
+                    <ul class="list-disc pl-6 mb-6">
+                        <li><strong>Space is Your Friend:</strong> Not every instrument needs to play all the time. Leaving space allows other elements to shine and creates dynamic contrast.</li>
+                        <li><strong>Complementary Frequencies:</strong> Ensure instruments aren't competing for the same sonic space. A well-arranged track has instruments occupying different frequency ranges.</li>
+                        <li><strong>Unified Dynamics:</strong> The band should breathe together—crescendos, decrescendos, and accents should feel intentional and collective.</li>
+                        <li><strong>Signature Elements:</strong> Develop recurring musical motifs, transitions, or techniques that become part of your band's identity.</li>
+                    </ul>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl">
+                            <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center text-white text-xl mb-4">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Frequency Balance</h4>
+                            <p class="text-sm">Bass: Foundation<br>Mid-range: Melody & Harmony<br>High-end: Texture & Detail</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center text-white text-xl mb-4">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Role Clarity</h4>
+                            <p class="text-sm">Each instrument should have a clear purpose: rhythmic foundation, melodic lead, harmonic support, or textural enhancement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <h2>3. Sound Design & Instrumentation Choices</h2>
+                    
+                    <p>The specific tones, textures, and instruments you choose play a crucial role in defining your sound. This goes beyond just guitar pedals or synth patches—it's about creating a consistent sonic palette.</p>
+                    
+                    <blockquote>
+                        "We spent six months just experimenting with different guitar pedals, amp settings, and synth presets before we found 'our' sound. It was a process of elimination as much as discovery."
+                        <footer class="mt-2 text-sm">— Jamie Miller, guitarist for Echo Valley</footer>
+                    </blockquote>
+                    
+                    <h3>Creating Your Sonic Palette:</h3>
+                    
+                    <ol class="list-decimal pl-6 mb-6">
+                        <li><strong>Document Your Settings:</strong> Once you find a tone that works, document it meticulously. Create presets or take photos of pedal/amp settings.</li>
+                        <li><strong>Consistency Across Songs:</strong> While each song might have unique elements, maintaining certain consistent tones creates a recognizable sound.</li>
+                        <li><strong>Signature Sounds:</strong> Develop at least 2-3 signature sounds that appear across multiple songs—a distinctive guitar tone, a unique synth patch, or a specific drum tuning.</li>
+                    </ol>
+                    
+                    <div class="my-10">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Music production equipment" 
+                             class="w-full h-auto rounded-xl shadow-lg">
+                    </div>
+
+                    <!-- Section 4 -->
+                    <h2>4. The Importance of Production Consistency</h2>
+                    
+                    <p>Your recorded output should sound like it comes from the same band, even if recorded at different times or in different studios.</p>
+                    
+                    <div class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-xl p-6 my-8">
+                        <h3 class="font-bold text-xl mb-4 flex items-center">
+                            <i class="fas fa-headphones text-purple-600 dark:text-purple-400 mr-3"></i>
+                            Production Checklist for Consistency
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Consistent vocal processing</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Similar drum sound/room mics</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Same mixing engineer when possible</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Mastered by the same person</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Many bands overlook the importance of production consistency, leading to a discography that sounds like it comes from different artists. Work with producers and engineers who understand your vision and can help maintain sonic continuity across releases.</p>
+
+                    <!-- Conclusion -->
+                    <h2>Final Thoughts</h2>
+                    
+                    <p>Building a cohesive band sound is an ongoing journey, not a destination. It requires patience, experimentation, and above all, a commitment to listening—to each other, to your influences, and to the music you're creating together.</p>
+                    
+                    <p>Remember: Your sound will evolve as you grow as musicians. The goal isn't to find a sound and stick with it forever, but to develop a musical identity that can grow and adapt while remaining recognizable as uniquely yours.</p>
+                    
+                    <div class="mt-12 p-6 sm:p-8 gradient-bg rounded-2xl text-white">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4">Ready to Develop Your Band's Sound?</h3>
+                        <p class="mb-6">Join our <span class="font-semibold">Band Sound Development Workshop</span> next month for hands-on guidance, personalized feedback, and practical exercises to help your band find its unique sonic identity.</p>
+                        <a href="#" class="inline-block bg-white text-purple-700 px-4 sm:px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition read-more-btn">
+                            Learn More About the Workshop
+                        </a>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                        <div class="flex flex-wrap gap-2 sm:gap-3">
+                            <span class="px-3 sm:px-4 py-2 gradient-bg text-white rounded-full text-xs sm:text-sm font-medium">Music Production</span>
+                            <span class="px-3 sm:px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs sm:text-sm font-medium">Band Development</span>
+                            <span class="px-3 sm:px-4 py-2 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded-full text-xs sm:text-sm font-medium">Sound Design</span>
+                            <span class="px-3 sm:px-4 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs sm:text-sm font-medium">Creative Process</span>
+                            <span class="px-3 sm:px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs sm:text-sm font-medium">Arrangement</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Author Bio -->
+                    <div class="mt-12 bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 sm:p-8">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start mb-6">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full gradient-bg flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-0 sm:mr-6">
+                                AM
+                            </div>
+                            <div class="text-center sm:text-left">
+                                <h3 class="text-xl sm:text-2xl font-bold">Alex Morgan</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Lead Producer at Groww Studios</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-center sm:text-left">With over 15 years in the music industry, Alex has worked with emerging and established bands to help them find and refine their unique sound. He's produced award-winning albums across multiple genres and regularly conducts workshops on band development and production techniques.</p>
+                    </div>
+                </div>
+            </article>
+            
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/3 mt-8 lg:mt-0">
+                <div class="sticky-sidebar">
+                    <!-- Table of Contents -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-8">
+                        <h3 class="font-title text-xl sm:text-2xl font-bold mb-6 gradient-text">In This Article</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <a href="#" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition group">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3 group-hover:gradient-bg group-hover:text-white transition">
+                                    <span class="text-xs sm:text-sm font-medium text-black">1</span>
+                                </div>
+                                <span class="text-sm sm:text-base">Understanding Your Collective Musical Identity</span>
+                            </a>
+                            <a href="#" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition group">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3 group-hover:gradient-bg group-hover:text-white transition">
+                                    <span class="text-xs sm:text-sm font-medium text-black">2</span>
+                                </div>
+                                <span class="text-sm sm:text-base">The Role of Arrangement in Cohesion</span>
+                            </a>
+                            <a href="#" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition group">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3 group-hover:gradient-bg group-hover:text-white transition">
+                                    <span class="text-xs sm:text-sm font-medium text-black">3</span>
+                                </div>
+                                <span class="text-sm sm:text-base">Sound Design & Instrumentation Choices</span>
+                            </a>
+                            <a href="#" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition group">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3 group-hover:gradient-bg group-hover:text-white transition">
+                                    <span class="text-xs sm:text-sm font-medium text-black">4</span>
+                                </div>
+                                <span class="text-sm sm:text-base">The Importance of Production Consistency</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Share Article -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-8">
+                        <h3 class="font-title text-xl sm:text-2xl font-bold mb-6 gradient-text">Share This Article</h3>
+                        <div class="flex justify-center flex-wrap gap-3 sm:gap-4">
+                            <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-bg text-white flex items-center justify-center hover:shadow-lg transition">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-bg text-white flex items-center justify-center hover:shadow-lg transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-bg text-white flex items-center justify-center hover:shadow-lg transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                            <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-bg text-white flex items-center justify-center hover:shadow-lg transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </button>
+                            <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+                        <h3 class="font-title text-xl sm:text-2xl font-bold mb-6 gradient-text">Related Articles</h3>
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="flex items-start group">
+                                <div class="w-16 h-12 sm:w-20 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 mr-3 sm:mr-4">
+                                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Live performance" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-sm sm:text-base group-hover:text-purple-600 dark:group-hover:text-purple-400 cursor-pointer">Mastering Stage Presence: A Band's Guide</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Feb 28, 2023 • 6 min read</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-16 h-12 sm:w-20 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 mr-3 sm:mr-4">
+                                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Creative process" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-sm sm:text-base group-hover:text-purple-600 dark:group-hover:text-purple-400 cursor-pointer">Overcoming Creative Blocks in Music Production</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Mar 10, 2023 • 8 min read</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-16 h-12 sm:w-20 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 mr-3 sm:mr-4">
+                                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Band management" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-sm sm:text-base group-hover:text-purple-600 dark:group-hover:text-purple-400 cursor-pointer">Effective Communication Within Bands</h4>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Feb 5, 2023 • 7 min read</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="blog.html" class="mt-6 block text-center gradient-bg text-white py-3 rounded-lg font-medium hover:shadow-lg transition read-more-btn">
+                          ⮜ Back to Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="mt-16">
+            <h2 class="font-title text-2xl sm:text-3xl font-bold mb-8 gradient-text">Discussion</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-8">
+                <h3 class="text-lg sm:text-xl font-bold mb-4">Leave a Comment</h3>
+                <form class="space-y-4">
+                    <textarea placeholder="Share your thoughts on building a cohesive band sound..." class="w-full h-32 px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"></textarea>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:justify-between">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="text" placeholder="Your name" class="flex-1 px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <button type="submit" class="gradient-bg text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition read-more-btn sm:w-auto w-full">
+                            Post Comment
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Existing Comments -->
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center mb-4 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold mr-4">
+                                MJ
+                            </div>
+                            <div>
+                                <p class="font-bold">Morgan James</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Band Leader • March 16, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300">Great article! The section on "Signature Sounds" really resonated with our band. We've been struggling with maintaining consistency across our EP tracks, and this gave us a clear roadmap to follow.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <button class="text-gray-500 hover:text-purple-600 dark:hover:text-purple-400 transition">
+                            <i class="fas fa-thumbs-up mr-1"></i> 24
+                        </button>
+                        <button class="text-gray-500 hover:text-purple-600 dark:hover:text-purple-400 transition">
+                            <i class="fas fa-reply mr-1"></i> Reply
+                        </button>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-white pt-20 pb-10 px-4 sm:px-6" dir="ltr">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    
+    <!-- Newsletter / Sign Up -->
+    <div>
+  <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="w-1 h-6 bg-violet/40"></span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>     
+       <p class="text-base sm:text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
+
+      <form class="flex flex-col sm:flex-row gap-4 rtl:flex-row-reverse">
+        <input type="email" placeholder="ENTER YOUR EMAIL"
+          class="bg-transparent border-2 border-white placeholder-white/60 px-4 sm:px-6 py-3 sm:py-4 outline-none focus:bg-white/5 w-full font-bold text-white text-sm sm:text-base">
+        <button type="submit"
+          class="bg-white text-violet px-6 sm:px-8 py-3 sm:py-4 font-bold uppercase hover:bg-blue hover:text-white transition-colors whitespace-nowrap text-sm sm:text-base">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-8 sm:mt-14 gap-8 sm:gap-10 rtl:text-right">
+      
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:underline text-sm sm:text-base">Home</a></li>
+        <li><a href="about.html" class="hover:underline text-sm sm:text-base">About</a></li>
+        <li><a href="programs.html" class="hover:underline text-sm sm:text-base">Programs</a></li>
+        <li><a href="contact.html" class="hover:underline text-sm sm:text-base">Contact</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Instagram</a></li>
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Twitter</a></li>
+        <li><a href="#" class="hover:underline text-sm sm:text-base">TikTok</a></li>
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Youtube</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Concert</a></li>
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Press Kit</a></li>
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Privacy</a></li>
+        <li><a href="#" class="hover:underline text-sm sm:text-base">Bookings</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-wider rtl:text-right">
+    <span class="text-xs sm:text-sm">&copy; 2025 The Groww-Band Music Group.</span>
+  </div>
+</footer>
+
+<script>
+// Fixed Theme Toggle Functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  
+  // Function to set theme with proper icon handling
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      // Update all theme icons
+      updateThemeIcons('dark');
+    } else {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      // Update all theme icons
+      updateThemeIcons('light');
+    }
+  }
+  
+  // Update all theme toggle icons
+  function updateThemeIcons(theme) {
+    const icons = document.querySelectorAll('#blog-theme-icon, #theme-icon');
+    icons.forEach(icon => {
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    });
+    
+    // Update mobile theme button text
+    const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+    if (mobileThemeBtn) {
+      mobileThemeBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+  }
+  
+  // Toggle theme function
+  function toggleTheme() {
+    const isDark = html.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+  }
+  
+  // SINGLE FUNCTION FOR RTL TOGGLE
+  function toggleRTL() {
+    const isRTL = html.getAttribute('dir') === 'rtl';
+    
+    if (isRTL) {
+      // Switch to LTR
+      html.setAttribute('dir', 'ltr');
+      html.setAttribute('lang', 'en');
+    } else {
+      // Switch to RTL
+      html.setAttribute('dir', 'rtl');
+      html.setAttribute('lang', 'ar');
+    }
+    
+    // Save preference
+    localStorage.setItem('dir', html.getAttribute('dir'));
+    
+    // Force redraw for mobile menu if it's open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.style.display = 'none';
+      setTimeout(() => {
+        mobileMenu.style.display = '';
+      }, 10);
+    }
+  }
+  
+  // ===== EVENT LISTENERS =====
+  
+  // Desktop RTL toggle
+  document.getElementById('rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Mobile RTL toggle
+  document.getElementById('mobile-rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Desktop theme toggle (navbar)
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // Blog page theme toggle
+  document.getElementById('blog-theme-btn')?.addEventListener('click', toggleTheme);
+  
+  // Mobile theme toggle
+  document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // ===== RESTORE SAVED SETTINGS =====
+  
+  // Restore RTL
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    html.setAttribute('dir', savedDir);
+    html.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+  }
+  
+  // Restore theme
+  // const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    // Default to dark if no saved preference
+    setTheme('dark');
+  }
+  
+  // Listen for system theme changes (only if no saved preference)
+  // if (!localStorage.getItem('theme')) {
+  //   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  //     setTheme(e.matches ? 'dark' : 'light');
+  //   });
+  // }
+});
+
+// Mobile menu toggle (separate from RTL)
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  }
+});
+
+// Submenu toggle for mobile
+function toggleSubMenu(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("hidden");
+}
+
+// Dropdown toggle for desktop
+function toggleDropdown(id) {
+  document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+    if (menu.id !== id) menu.classList.add('hidden');
+  });
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('li')) {
+    document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+
+// Copy link functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const copyButton = document.querySelector('.fa-copy');
+  if (copyButton) {
+    copyButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalIcon = this.className;
+        this.className = 'fas fa-check';
+        setTimeout(() => {
+          this.className = originalIcon;
+        }, 2000);
+      });
+    });
+  }
+  
+  // Smooth scrolling for table of contents
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

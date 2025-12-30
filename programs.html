@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en" class="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Music Artistry Site — Violet & Blue Theme</title>
+      <link rel="icon" href="growwpark_logo.jpg">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="·.¸¸.·♩♪♫ Font Style ♫♪♩·.¸¸.·" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .artist-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+    .artist-img { filter: grayscale(100%); transition: all 0.5s ease; }
+   
+  [dir="rtl"] #mobile-menu {
+    direction: rtl;
+  }
+
+/* ===============================
+   COMPLETE RTL SOLUTION FOR BOTH DESKTOP & MOBILE
+================================ */
+
+/* NAVBAR CONTAINER - Works for both desktop and mobile */
+[dir="rtl"] nav > .max-w-7xl {
+  flex-direction: row-reverse;
+}
+
+/* LOGO - Move to right in RTL */
+[dir="rtl"] nav > .max-w-7xl > a:first-child {
+  order: 2;
+  margin-left: auto;
+}
+
+/* DESKTOP MENU (md: and up) */
+@media (min-width: 768px) {
+  [dir="rtl"] #navbar-default > ul {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] #navbar-default {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  /* Desktop dropdown positioning */
+  [dir="rtl"] #homeMenu {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right;
+  }
+  
+  [dir="rtl"] #dashMenu {
+    right: auto !important;
+    left: 0 !important;
+    text-align: right;
+  }
+}
+
+/* MOBILE MENU */
+[dir="rtl"] #mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .mobile-toggle {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .arrow {
+  transform: rotate(180deg);
+  order: -1;
+}
+
+[dir="rtl"] #mobile-menu ul ul {
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
+  text-align: right;
+}
+
+/* Mobile hamburger button stays on left in RTL */
+[dir="rtl"] #menu-btn {
+  order: 1;
+}
+/* DEBUG STYLES - Remove after confirming RTL works */
+[dir="rtl"] nav > .max-w-7xl {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+[dir="rtl"] #mobile-menu {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+@media (max-width:800px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:800px){
+.register{
+  display:none;
+}
+}
+@media (max-width: 800px) {
+    #menu-btn {
+        display: block;
+        margin-left:450px;
+    }
+}
+@media (max-width: 800px) {
+    #rtl-toggle {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    #theme-toggle {
+        display: none;
+    }
+}
+@media (max-width: 1280px) {
+    .list li{
+        display: none !important;
+    }
+}
+@media (max-width: 1280px) {
+    .menu{
+       list-style-type: none;
+      margin-right: 50px;
+    }
+}
+@media (max-width:820px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:1440px){
+.links ul {
+  display:none;
+}
+}
+@media (max-width:1280px){
+    #navbar-default{
+        gap:17px;
+    }
+}
+@media (max-width:1024px){
+#navbar-default {
+  font-size: 11px;
+    gap: 15px;
+}
+}
+  .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+  </style>
+</head>
+
+<body class=" pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-arial">
+
+<nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+    </a>
+
+    <!-- Hamburger button for mobile -->
+<button
+  id="menuBtn"
+  class="lg:hidden text-violet"
+>
+  ☰
+</button>
+
+<div
+  id="mobileMenu"
+  class="hidden lg:hidden absolute top-full left-0 w-full"
+>
+      <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
+        
+        <!-- Home submenu -->
+      <!-- Home submenu -->
+<li>
+  <button onclick="toggleSubMenu('homeSub')" class="mobile-toggle w-full flex items-center justify-between">
+    <span class="label">Home</span>
+    <span class="arrow rtl:rotate-180">▼</span>
+  </button>
+  <ul id="homeSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+      <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+  </ul>
+</li>
+
+        <!-- Other menu items -->
+              <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <!-- Dashboard submenu -->
+        <li>
+          <button onclick="toggleSubMenu('dashSub')" class="mobile-toggle w-full flex items-center justify-between">
+            <span class="label">Dashboard</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul id="dashSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+                   <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+        <!-- Theme & RTL toggles -->
+        <li>
+          <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            🌙 Dark / Light
+          </button>
+        </li>
+        <li>
+          <button id="mobile-rtl-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            RTL / LTR
+          </button>
+        </li>
+
+        <!-- New Sign Up & Login buttons for mobile -->
+        <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+         <a href="register.html">Register</a>
+          </button>
+        </li>
+         <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+         <a href="login.html">Login</a>
+          </button>
+        </li>
+       
+        
+
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="menu hidden md:flex items-center list-none gap-6" id="navbar-default">
+<ul class="list hidden lg:flex gap-4">
+  <!-- <li>Home</li>
+  <li>About</li> -->
+</ul>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('homeMenu')" class="hover:text-violet transition flex items-center gap-1">Home ▼</button>
+          <ul id="homeMenu" class="hidden absolute left-0 mt-3 w-40 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('dashMenu')" class="hover:text-violet transition flex items-center gap-1">Dashboard ▼</button>
+          <ul id="dashMenu" class="hidden absolute right-0 mt-3 w-44 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+   
+
+      <!-- Theme & RTL toggles -->
+      <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1">🌙</button>
+      <button id="rtl-toggle" class="text-xs uppercase border px-2 py-1 rounded hover:bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:text-white dark:hover:bg-white dark:hover:text-black">RTL/LTR</button>
+
+      <!-- New Sign Up & Login buttons for desktop -->
+      <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Register</a>
+            <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <style>
+        :root {
+            --primary: #7F00FF;
+            --secondary: #613885;
+            --accent: #F59E0B;
+            --bg-color: #573d5e;
+            --text-color: #F5F7FA;
+            --card-bg: rgba(55, 21, 103, 0.8);
+            --muted-text: #94A3B8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: all 0.4s ease;
+        }
+
+        body.light-mode {
+            --bg-color: #F5F7FA;
+            --text-color: #1F2937;
+            --card-bg: rgba(208, 189, 222, 0.95);
+            --muted-text: #6B7280;
+        }
+
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        /* .card-glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(127, 0, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        } */
+
+        body.light-mode .card-glass {
+            border: 1px solid rgba(127, 0, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(127, 0, 255, 0.05);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(127, 0, 255, 0.2);
+        }
+
+        body.light-mode .hover-lift:hover {
+            box-shadow: 0 20px 40px rgba(127, 0, 255, 0.1);
+        }
+
+        .floating-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 6px 20px rgba(127, 0, 255, 0.4);
+        }
+
+        .control-btn .fa-sun {
+            display: none;
+        }
+
+        body.light-mode .control-btn .fa-sun {
+            display: block;
+        }
+
+        body.light-mode .control-btn .fa-moon {
+            display: none;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        .text-muted {
+            color: var(--muted-text);
+        }
+
+        /* Program Card Styles */
+        .program-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(127, 0, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .program-card:hover::before {
+            opacity: 1;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-beginner {
+            background: linear-gradient(135deg, #10B981, #059669);
+        }
+
+        .badge-intermediate {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+        }
+
+        .badge-advanced {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+        }
+
+        .badge-popular {
+            background: linear-gradient(135deg, #7F00FF, #00C2FF);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            height: 6px;
+            background: rgba(127, 0, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+            transition: width 0.6s ease;
+        }
+
+        /* Enrollment Button */
+        .enroll-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .enroll-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(127, 0, 255, 0.3);
+        }
+
+        /* Program Feature */
+        .program-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(127, 0, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary);
+        }
+
+        /* Timeline */
+        .program-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .program-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--bg-color);
+        }
+
+        @media (max-width: 768px) {
+            .floating-controls {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .control-btn {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            color: rgba(127, 0, 255, 0.1);
+            font-family: 'Georgia', serif;
+            line-height: 1;
+        }
+
+        /* Stats Counter */
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        /* Program Hero Image */
+        .program-hero {
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .program-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(127, 0, 255, 0.3), rgba(0, 194, 255, 0.2));
+        }
+
+        /* Curriculum Accordion */
+        .curriculum-item {
+            border-bottom: 1px solid rgba(127, 0, 255, 0.2);
+        }
+
+        .curriculum-header {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .curriculum-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .curriculum-header.active .curriculum-icon {
+            transform: rotate(45deg);
+        }
+
+        .curriculum-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .curriculum-content.open {
+            max-height: 1000px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+ 
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Component 1: Hero Section -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-16">
+                <h1 class="heading-font text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Elevate Your <span class="gradient-text">Musical Journey</span>
+                </h1>
+                <p class="text-xl text-muted max-w-3xl mx-auto mb-10">
+                    Transform your artistry with our comprehensive programs designed by industry experts. 
+                    From beginner basics to advanced career development, we've got your growth covered.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="px-8 py-3 rounded-full gradient-bg text-white font-semibold hover-lift">
+                        <i class="fas fa-rocket mr-2"></i> Explore Programs
+                    </button>
+                    <button class="px-8 py-3 rounded-full border-2 border-purple-500 text-purple-700 hover:bg-purple-900/30 font-semibold hover-lift">
+                        <i class="fas fa-calendar-alt mr-2"></i> Book Consultation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Program Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="card-glass rounded-2xl p-6 text-center hover-lift fade-in delay-1">
+                    <div class="stats-counter">25+</div>
+                    <p class="text-muted">Expert Programs</p>
+                </div>
+                <div class="card-glass rounded-2xl p-6 text-center hover-lift fade-in delay-2">
+                    <div class="stats-counter">98%</div>
+                    <p class="text-muted">Success Rate</p>
+                </div>
+                <div class="card-glass rounded-2xl p-6 text-center hover-lift fade-in delay-3">
+                    <div class="stats-counter">5K+</div>
+                    <p class="text-muted">Artists Trained</p>
+                </div>
+                <div class="card-glass rounded-2xl p-6 text-center hover-lift fade-in delay-4">
+                    <div class="stats-counter">∞</div>
+                    <p class="text-muted">Lifetime Access</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 2: Featured Programs -->
+        <section class="mb-20 fade-in">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold">
+                    <i class="fas fa-crown text-amber-400 mr-3"></i>
+                    Featured Programs
+                </h2>
+                <button class="text-purple-300 hover:text-white font-medium transition-colors hover-lift">
+                    View All <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="program-card card-glass rounded-2xl overflow-hidden hover-lift fade-in delay-1">
+                    <div class="program-hero">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Stage Mastery" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="program-badge badge-popular text-white">🔥 POPULAR</span>
+                            <span class="text-sm text-muted">8 Weeks</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Stage Mastery Pro</h3>
+                        <p class="text-muted mb-6">Transform from bedroom artist to stage sensation with our performance-focused program.</p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="program-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-microphone">🎤</i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Live Performance Techniques</p>
+                                    <p class="text-sm text-muted">Master stage presence & audience engagement</p>
+                                </div>
+                            </div>
+                            <div class="program-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users">🥁</i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Band Dynamics</p>
+                                    <p class="text-sm text-muted">Learn to lead and collaborate effectively</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-sm text-muted">Enrollment</p>
+                                <p class="text-lg font-bold">245/300 spots</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-muted">Price</p>
+                                <p class="text-lg font-bold gradient-text">$499</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill" style="width: 82%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-muted mb-6">
+                            <span>82% Filled</span>
+                            <span>Starts: Jan 15, 2024</span>
+                        </div>
+
+                        <button class="w-full py-3 rounded-xl enroll-btn font-bold hover-lift">
+                            <i class="fas fa-lock-open mr-2"></i> Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="program-card card-glass rounded-2xl overflow-hidden hover-lift fade-in delay-2">
+                    <div class="program-hero">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Music Production" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="program-badge badge-intermediate text-white">INTERMEDIATE</span>
+                            <span class="text-sm text-muted">12 Weeks</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Music Production Lab</h3>
+                        <p class="text-muted mb-6">From bedroom producer to professional studio engineer in 12 intensive weeks.</p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="program-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-sliders-h">⚡</i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">DAW Mastery</p>
+                                    <p class="text-sm text-muted">Ableton, Logic Pro & FL Studio deep dive</p>
+                                </div>
+                            </div>
+                            <div class="program-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-wave-square">🎯</i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Mixing & Mastering</p>
+                                    <p class="text-sm text-muted">Industry-standard audio processing techniques</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-sm text-muted">Enrollment</p>
+                                <p class="text-lg font-bold">189/250 spots</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-muted">Price</p>
+                                <p class="text-lg font-bold gradient-text">$799</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill" style="width: 76%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-muted mb-6">
+                            <span>76% Filled</span>
+                            <span>Starts: Feb 1, 2024</span>
+                        </div>
+
+                        <button class="w-full py-3 rounded-xl enroll-btn font-bold hover-lift">
+                            <i class="fas fa-lock-open mr-2"></i> Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card card-glass rounded-2xl overflow-hidden hover-lift fade-in delay-3">
+                    <div class="program-hero">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Artist Branding" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="program-badge badge-beginner text-white">BEGINNER</span>
+                            <span class="text-sm text-muted">6 Weeks</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Artist Branding Blueprint</h3>
+                        <p class="text-muted mb-6">Build a powerful artist brand that connects with fans and attracts industry attention.</p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="program-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-palette">👀</i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Visual Identity</p>
+                                    <p class="text-sm text-muted">Create compelling logos, merch & visuals</p>
+                                </div>
+                            </div>
+                            <div class="program-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line">📲</i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Social Media Strategy</p>
+                                    <p class="text-sm text-muted">Grow your following authentically</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <p class="text-sm text-muted">Enrollment</p>
+                                <p class="text-lg font-bold">312/400 spots</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-muted">Price</p>
+                                <p class="text-lg font-bold gradient-text">$349</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-bar mb-4">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-muted mb-6">
+                            <span>78% Filled</span>
+                            <span>Starts: Jan 22, 2024</span>
+                        </div>
+
+                        <button class="w-full py-3 rounded-xl enroll-btn font-bold hover-lift">
+                            <i class="fas fa-lock-open mr-2"></i> Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 3: Program Pathways -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-road text-blue-400 mr-3"></i>
+                    Your Growth Pathway
+                </h2>
+                <p class="text-muted text-lg">Choose your journey based on your current level and goals</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Beginner Pathway -->
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-1">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-3xl text-white">🧑🏻‍🏫</i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Beginner Foundation</h3>
+                        <p class="text-muted">Start your musical journey with solid fundamentals</p>
+                    </div>
+                    
+                    <div class="program-timeline mb-8">
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Month 1-2: Core Skills</h4>
+                            <p class="text-sm text-muted">Basic theory, instrument fundamentals, rhythm training</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Month 3-4: First Performance</h4>
+                            <p class="text-sm text-muted">Simple songs, stage basics, recording introduction</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Month 5-6: Creative Development</h4>
+                            <p class="text-sm text-muted">Songwriting basics, collaboration, finding your sound</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-bold mb-3">Recommended Programs:</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center p-3 rounded-lg bg-purple-900/20">
+                                <i class="fas fa-guitar text-purple-400 mr-3">🎶</i>
+                                <span>Music Fundamentals 101</span>
+                            </div>
+                            <div class="flex items-center p-3 rounded-lg bg-purple-900/20">
+                                <i class="fas fa-microphone text-purple-400 mr-3">🕺</i>
+                                <span>First Stage Experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-3 rounded-xl border-2 border-purple-500 text-purple-300 hover:bg-purple-900/30 font-bold hover-lift">
+                        Start Beginner Journey
+                    </button>
+                </div>
+
+                <!-- Intermediate Pathway -->
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-2">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tree text-3xl text-white">🌱</i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Intermediate Growth</h3>
+                        <p class="text-muted">Elevate your skills and build professional habits</p>
+                    </div>
+                    
+                    <div class="program-timeline mb-8">
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Month 1-3: Skill Refinement</h4>
+                            <p class="text-sm text-muted">Advanced techniques, ear training, genre specialization</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Month 4-6: Professional Development</h4>
+                            <p class="text-sm text-muted">Home studio setup, basic production, live sound</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Month 7-9: Career Building</h4>
+                            <p class="text-sm text-muted">Networking, online presence, booking strategies</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-bold mb-3">Recommended Programs:</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center p-3 rounded-lg bg-blue-900/20">
+                                <i class="fas fa-sliders-h text-blue-400 mr-3">🏚️</i>
+                                <span>Home Studio Mastery</span>
+                            </div>
+                            <div class="flex items-center p-3 rounded-lg bg-blue-900/20">
+                                <i class="fas fa-users text-blue-400 mr-3">🎸</i>
+                                <span>Band Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-3 rounded-xl gradient-bg text-white font-bold hover-lift">
+                        <i class="fas fa-star mr-2"></i> Start Intermediate Journey
+                    </button>
+                </div>
+
+                <!-- Advanced Pathway -->
+                <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-3">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mountain text-3xl text-white">🏆</i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Advanced Mastery</h3>
+                        <p class="text-muted">Achieve professional excellence and industry recognition</p>
+                    </div>
+                    
+                    <div class="program-timeline mb-8">
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Quarter 1: Industry Integration</h4>
+                            <p class="text-sm text-muted">Label relations, advanced production, touring prep</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Quarter 2: Business Mastery</h4>
+                            <p class="text-sm text-muted">Contracts, royalties, brand partnerships, team building</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold mb-2">Quarter 3-4: Legacy Building</h4>
+                            <p class="text-sm text-muted">Mentorship, creative direction, industry innovation</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <p class="font-bold mb-3">Recommended Programs:</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center p-3 rounded-lg bg-green-900/20">
+                                <i class="fas fa-briefcase text-green-400 mr-3">💼</i>
+                                <span>Music Business Pro</span>
+                            </div>
+                            <div class="flex items-center p-3 rounded-lg bg-green-900/20">
+                                <i class="fas fa-globe text-green-400 mr-3">✈️</i>
+                                <span>International Touring</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-3 rounded-xl border-2 border-green-500 text-green-300 hover:bg-green-900/30 font-bold hover-lift">
+                        Start Advanced Journey
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 4: Program Curriculum -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-book-open text-purple-400 mr-3"></i>
+                    Comprehensive Curriculum
+                </h2>
+                <p class="text-muted text-lg">Deep dive into what you'll learn in our flagship program</p>
+            </div>
+
+            <div class="card-glass rounded-2xl p-8 hover-lift">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Stage Mastery Pro Curriculum</h3>
+                        <p class="text-muted mb-8">8-week intensive program covering everything from stage presence to professional booking.</p>
+                        
+                        <div class="space-y-2 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>60+ Video Lessons</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>15 Live Coaching Sessions</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Personalized Feedback</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Industry Guest Speakers</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-900/20 rounded-xl p-6">
+                            <h4 class="font-bold text-lg mb-3">What You'll Achieve</h4>
+                            <ul class="space-y-2 text-muted">
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-amber-400 mr-2 mt-1"></i>
+                                    <span>Confident stage presence in any venue</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-amber-400 mr-2 mt-1"></i>
+                                    <span>Professional booking negotiation skills</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-amber-400 mr-2 mt-1"></i>
+                                    <span>Effective band leadership techniques</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-amber-400 mr-2 mt-1"></i>
+                                    <span>Crowd engagement mastery</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold mb-6">Weekly Breakdown</h4>
+                        <div class="space-y-4">
+                            <div class="curriculum-item">
+                                <div class="curriculum-header">
+                                    <div>
+                                        <h5 class="font-bold">Week 1-2: Foundation Building</h5>
+                                        <p class="text-sm text-muted">Stage psychology & audience connection</p>
+                                    </div>
+                                    <i class="fas fa-plus curriculum-icon text-purple-400"></i>
+                                </div>
+                                <div class="curriculum-content">
+                                    <ul class="space-y-2 text-muted pl-4">
+                                        <li>• Overcoming stage fright techniques</li>
+                                        <li>• Basic microphone technique</li>
+                                        <li>• Stage movement fundamentals</li>
+                                        <li>• Eye contact and audience scanning</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="curriculum-item">
+                                <div class="curriculum-header">
+                                    <div>
+                                        <h5 class="font-bold">Week 3-4: Technical Mastery</h5>
+                                        <p class="text-sm text-muted">Sound engineering & equipment handling</p>
+                                    </div>
+                                    <i class="fas fa-plus curriculum-icon text-purple-400"></i>
+                                </div>
+                                <div class="curriculum-content">
+                                    <ul class="space-y-2 text-muted pl-4">
+                                        <li>• PA system basics</li>
+                                        <li>• Monitor mixing for live performance</li>
+                                        <li>• Cable management on stage</li>
+                                        <li>• Emergency troubleshooting</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="curriculum-item">
+                                <div class="curriculum-header">
+                                    <div>
+                                        <h5 class="font-bold">Week 5-6: Performance Excellence</h5>
+                                        <p class="text-sm text-muted">Set design & crowd interaction</p>
+                                    </div>
+                                    <i class="fas fa-plus curriculum-icon text-purple-400"></i>
+                                </div>
+                                <div class="curriculum-content">
+                                    <ul class="space-y-2 text-muted pl-4">
+                                        <li>• Building set lists for impact</li>
+                                        <li>• Between-song banter techniques</li>
+                                        <li>• Handling technical difficulties gracefully</li>
+                                        <li>• Energy management during long sets</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="curriculum-item">
+                                <div class="curriculum-header">
+                                    <div>
+                                        <h5 class="font-bold">Week 7-8: Professional Development</h5>
+                                        <p class="text-sm text-muted">Booking & career management</p>
+                                    </div>
+                                    <i class="fas fa-plus curriculum-icon text-purple-400"></i>
+                                </div>
+                                <div class="curriculum-content">
+                                    <ul class="space-y-2 text-muted pl-4">
+                                        <li>• Negotiating contracts and fees</li>
+                                        <li>• Building relationships with venues</li>
+                                        <li>• Marketing your live shows</li>
+                                        <li>• Creating professional press kits</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component 5: Success Stories -->
+        <section class="mb-20 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-trophy text-amber-400 mr-3"></i>
+                    Program Success Stories
+                </h2>
+                <p class="text-muted text-lg">See how artists transformed their careers through our programs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card card-glass rounded-2xl p-8 hover-lift fade-in delay-1">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Sarah" class="w-16 h-16 rounded-full object-cover border-2 border-purple-500">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah Melody</h4>
+                            <p class="text-sm text-muted">Indie Folk Artist</p>
+                            <div class="flex text-amber-400 text-sm mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted italic mb-6">
+                        "The Stage Mastery program transformed me from a nervous performer to a confident stage presence. 
+                        I went from open mics to headlining my first tour in 6 months!"
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-muted">Program Completed</p>
+                            <p class="font-bold gradient-text">Stage Mastery Pro</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-muted">Bookings Increase</p>
+                            <p class="font-bold text-green-400">+450%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card card-glass rounded-2xl p-8 hover-lift fade-in delay-2">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Marcus" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Marcus Beat</h4>
+                            <p class="text-sm text-muted">Electronic Producer</p>
+                            <div class="flex text-amber-400 text-sm mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted italic mb-6">
+                        "Music Production Lab took my home recordings from amateur to professional quality. 
+                        I landed my first sync licensing deal within 3 months of completing the program."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-muted">Program Completed</p>
+                            <p class="font-bold gradient-text">Production Lab</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-muted">Revenue Growth</p>
+                            <p class="font-bold text-green-400">+320%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card card-glass rounded-2xl p-8 hover-lift fade-in delay-3">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpcmwlMjBwcm9maWxlfGVufDB8fDB8fHww" 
+                             alt="Jamila" class="w-16 h-16 rounded-full object-cover border-2 border-green-500">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Jamila Sound</h4>
+                            <p class="text-sm text-muted">R&B Singer</p>
+                            <div class="flex text-amber-400 text-sm mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted italic mb-6">
+                        "Artist Branding Blueprint helped me find my unique voice and visual style. 
+                        My Instagram following grew from 2K to 50K in just 4 months after implementing their strategies."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-muted">Program Completed</p>
+                            <p class="font-bold gradient-text">Branding Blueprint</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-muted">Social Growth</p>
+                            <p class="font-bold text-green-400">+2400%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center fade-in delay-4">
+                <button class="px-8 py-3 rounded-full border-2 border-purple-500 text-purple-300 hover:bg-purple-900/30 font-semibold hover-lift">
+                    <i class="fas fa-play-circle mr-2"></i> Watch More Success Stories
+                </button>
+            </div>
+        </section>
+
+        <!-- Component 6: Program Investment -->
+        <section class="fade-in">
+            <div class="card-glass rounded-3xl p-8 md:p-12 text-center">
+                <h2 class="heading-font text-3xl md:text-5xl font-bold mb-6">
+                    Invest in Your <span class="gradient-text">Artistic Future</span>
+                </h2>
+                <p class="text-xl text-muted max-w-2xl mx-auto mb-10">
+                    Choose the plan that fits your goals. All programs include lifetime access to materials 
+                    and community support.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- Single Program -->
+                    <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-1">
+                        <h3 class="text-2xl font-bold mb-4">Single Program</h3>
+                        <div class="text-5xl font-bold gradient-text mb-2">$499</div>
+                        <p class="text-muted mb-8">One-time payment</p>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>One complete program</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Lifetime course access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Community access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-times-circle text-gray-400 mr-3"></i>
+                                <span class="text-muted">Coaching sessions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-times-circle text-gray-400 mr-3"></i>
+                                <span class="text-muted">Certification</span>
+                            </li>
+                        </ul>
+
+                        <button class="w-full py-3 rounded-xl border-2 border-purple-500 text-purple-300 hover:bg-purple-900/30 font-bold hover-lift">
+                            Get Single Program
+                        </button>
+                    </div>
+
+                    <!-- Program Bundle -->
+                    <div class="card-glass rounded-2xl p-8 relative hover-lift fade-in delay-2">
+                        
+                        <h3 class="text-2xl font-bold mb-4">Growth Bundle</h3>
+                        <div class="text-5xl font-bold gradient-text mb-2">$1,299</div>
+                        <p class="text-muted mb-8">Save $400 (3 programs)</p>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Any 3 programs</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Lifetime course access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Priority community access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>4 coaching sessions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Program certification</span>
+                            </li>
+                        </ul>
+
+                        <button class="w-full py-3 rounded-xl gradient-bg text-white font-bold hover-lift">
+                            Get Growth Bundle
+                        </button>
+                    </div>
+
+                    <!-- All Access -->
+                    <div class="card-glass rounded-2xl p-8 hover-lift fade-in delay-3">
+                        <h3 class="text-2xl font-bold mb-4">All Access Pass</h3>
+                        <div class="text-5xl font-bold gradient-text mb-2">$2,499</div>
+                        <p class="text-muted mb-8">Annual subscription</p>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>All 25+ programs</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Lifetime course access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>VIP community access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Unlimited coaching</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>All certifications + Master</span>
+                            </li>
+                        </ul>
+
+                        <button class="w-full py-3 rounded-xl border-2 border-green-500 text-green-300 hover:bg-green-900/30 font-bold hover-lift">
+                            Get All Access
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 fade-in delay-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-green-400 text-2xl mr-3"></i>
+                        <div>
+                            <p class="font-bold">30-Day Money Back</p>
+                            <p class="text-sm text-muted">Full refund if not satisfied</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-graduation-cap text-blue-400 text-2xl mr-3"></i>
+                        <div>
+                            <p class="font-bold">Payment Plans Available</p>
+                            <p class="text-sm text-muted">Flexible monthly options</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-certificate text-amber-400 text-2xl mr-3"></i>
+                        <div>
+                            <p class="font-bold">Industry-Recognized</p>
+                            <p class="text-sm text-muted">Certifications included</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            // Save preference
+            const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            
+            // Add animation
+            themeToggle.style.transform = 'scale(1.1) rotate(180deg)';
+            setTimeout(() => {
+                themeToggle.style.transform = '';
+            }, 300);
+        });
+
+        // Curriculum Accordion
+        document.querySelectorAll('.curriculum-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.curriculum-icon');
+                
+                // Toggle current item
+                header.classList.toggle('active');
+                content.classList.toggle('open');
+                
+                // Toggle icon
+                if (header.classList.contains('active')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+                
+                // Close other items in same section
+                const parent = header.parentElement.parentElement;
+                parent.querySelectorAll('.curriculum-header').forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.nextElementSibling.classList.remove('open');
+                        otherHeader.querySelector('.curriculum-icon').classList.remove('fa-minus');
+                        otherHeader.querySelector('.curriculum-icon').classList.add('fa-plus');
+                    }
+                });
+            });
+        });
+
+        // Open first curriculum item by default
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstCurriculum = document.querySelector('.curriculum-header');
+            if (firstCurriculum) {
+                firstCurriculum.click();
+            }
+        });
+
+        // Animate progress bars on scroll
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressFill = entry.target.querySelector('.progress-fill');
+                    if (progressFill) {
+                        const width = progressFill.style.width;
+                        progressFill.style.width = '0';
+                        setTimeout(() => {
+                            progressFill.style.width = width;
+                        }, 300);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.progress-bar').forEach(bar => {
+            progressObserver.observe(bar);
+        });
+
+        // Enrollment button animations
+        document.querySelectorAll('.enroll-btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+            
+            button.addEventListener('click', function(e) {
+                // Ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.4);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    z-index: 1;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            .enroll-btn, button {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate stats counter
+        function animateCounter(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Trigger counter animation when stats section is in view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stats-counter');
+                    counters.forEach(counter => {
+                        const value = parseInt(counter.textContent);
+                        animateCounter(counter, 0, value, 2000);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-white pt-20 pb-10 px-6" dir="ltr">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    
+    <!-- Newsletter / Sign Up -->
+    <div>
+  <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="w-1 h-6 bg-violet/40"></span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+            <p class="text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
+
+      <form class="flex flex-col sm:flex-row gap-4 rtl:flex-row-reverse">
+        <input type="email" placeholder="ENTER YOUR EMAIL"
+          class="bg-transparent border-2 border-white placeholder-white/60 px-6 py-4 outline-none focus:bg-white/5 w-full font-bold text-white">
+        <button type="submit"
+          class="bg-white text-violet px-8 py-4 font-bold uppercase hover:bg-blue hover:text-white transition-colors whitespace-nowrap">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-14 gap-10 rtl:text-right">
+      
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About</a></li>
+        <li><a href="programs.html" class="hover:underline">Programs</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Instagram</a></li>
+        <li><a href="#" class="hover:underline">Twitter</a></li>
+        <li><a href="#" class="hover:underline">TikTok</a></li>
+        <li><a href="#" class="hover:underline">Youtube</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Concert</a></li>
+        <li><a href="#" class="hover:underline">Press Kit</a></li>
+        <li><a href="#" class="hover:underline">Privacy</a></li>
+        <li><a href="#" class="hover:underline">Bookings</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-wider rtl:text-right">
+    <span>&copy; 2025 The Groww-Band Music Group.</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  
+  // SINGLE FUNCTION FOR RTL TOGGLE
+  function toggleRTL() {
+    const isRTL = html.getAttribute('dir') === 'rtl';
+    
+    if (isRTL) {
+      // Switch to LTR
+      html.setAttribute('dir', 'ltr');
+      html.setAttribute('lang', 'en');
+    } else {
+      // Switch to RTL
+      html.setAttribute('dir', 'rtl');
+      html.setAttribute('lang', 'ar');
+    }
+    
+    // Save preference
+    localStorage.setItem('dir', html.getAttribute('dir'));
+    
+    // Force redraw for mobile menu if it's open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.style.display = 'none';
+      setTimeout(() => {
+        mobileMenu.style.display = '';
+      }, 10);
+    }
+  }
+  
+  // FIXED THEME TOGGLE FUNCTION
+  function toggleTheme() {
+    // Check if dark class exists
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      // Switch to light mode
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    } else {
+      // Switch to dark mode
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+    
+    // Alternative: If using data-theme attribute
+    // const currentTheme = html.getAttribute('data-theme');
+    // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // html.setAttribute('data-theme', newTheme);
+    // localStorage.setItem('theme', newTheme);
+    
+    // Save theme preference
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  }
+  
+  // ===== EVENT LISTENERS =====
+  
+  // Desktop RTL toggle
+  document.getElementById('rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Mobile RTL toggle
+  document.getElementById('mobile-rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Desktop theme toggle
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // Mobile theme toggle
+  document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // ===== RESTORE SAVED SETTINGS =====
+  
+  // Restore RTL
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    html.setAttribute('dir', savedDir);
+    html.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+  }
+  
+  // Restore theme - FIXED
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    // Remove both classes first
+    document.documentElement.classList.remove('dark', 'light');
+    
+    // Add the saved theme class
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  } else {
+    // Default to light if no preference saved
+    document.documentElement.classList.add('light');
+  }
+});
+
+// Mobile menu toggle (separate from RTL)
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  }
+});
+
+// Submenu toggle for mobile
+function toggleSubMenu(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("hidden");
+}
+
+// Dropdown toggle for desktop
+function toggleDropdown(id) {
+  document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+    if (menu.id !== id) menu.classList.add('hidden');
+  });
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('li')) {
+    document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+</script>
+
+
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        violet: '#7F00FF',
+        blue: '#00C2FF',
+        deep: '#0A0F1F',
+        soft: '#F5F7FA'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
+      }
+    }
+  }
+  // REMOVE the RTL plugin - we'll handle it with CSS instead
+}
+</script>
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

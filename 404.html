@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 | GrowwBand</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Animations -->
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    @keyframes glow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes equalize {
+      0% { height: 20%; }
+      50% { height: 100%; }
+      100% { height: 30%; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br 
+             from-[#f5f3ff] via-[#fdf4ff] to-white
+             dark:from-[#12051f] dark:via-[#1c0730] dark:to-[#0b0214]
+             text-gray-900 dark:text-white
+             flex items-center justify-center overflow-hidden relative">
+
+  <!-- Animated Glows -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-violet-600/30 rounded-full blur-3xl animate-[glow_6s_ease-in-out_infinite]"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-[glow_8s_ease-in-out_infinite]"></div>
+
+  <!-- Main Container -->
+  <div class="relative z-10 max-w-3xl w-full px-6 text-center">
+
+    <!-- Logo -->
+    <div class="mb-6 flex justify-center items-center gap-2 animate-[float_6s_ease-in-out_infinite]">
+      <span class="text-3xl font-extrabold text-violet-600 dark:text-violet-400">
+        𝄞𝄢 GrowwBand
+      </span>
+    </div>
+
+    <!-- 404 -->
+    <h1 class="text-[7rem] sm:text-[9rem] font-extrabold leading-none
+               bg-gradient-to-r from-violet-500 to-indigo-500
+               bg-clip-text text-transparent
+               animate-[float_4s_ease-in-out_infinite]">
+      404
+    </h1>
+
+    <!-- Equalizer -->
+    <div class="flex justify-center items-end gap-2 mt-6 h-12">
+      <span class="w-2 bg-violet-500 rounded animate-[equalize_1s_ease-in-out_infinite]"></span>
+      <span class="w-2 bg-indigo-500 rounded animate-[equalize_1.2s_ease-in-out_infinite]"></span>
+      <span class="w-2 bg-fuchsia-500 rounded animate-[equalize_0.9s_ease-in-out_infinite]"></span>
+      <span class="w-2 bg-violet-400 rounded animate-[equalize_1.1s_ease-in-out_infinite]"></span>
+    </div>
+
+    <p class="mt-6 text-xl sm:text-2xl font-semibold animate-[float_5s_ease-in-out_infinite]">
+      Lost in the Rhythm 🎶
+    </p>
+
+    <p class="mt-2 text-gray-600 dark:text-gray-400 max-w-xl mx-auto opacity-0 animate-[fadeIn_1.5s_ease-out_forwards]"
+       style="animation-delay:0.6s">
+      The page you’re looking for doesn’t exist or has been moved.
+      Let’s get you back to the groove.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html"
+         class="px-6 py-3 rounded-xl font-semibold
+                bg-violet-600 hover:bg-violet-700
+                text-white transition
+                shadow-lg shadow-violet-600/40
+                hover:scale-105">
+        🎧 Go Home
+      </a>
+
+      <a href="#"
+         class="px-6 py-3 rounded-xl font-semibold
+                border border-violet-500/40
+                hover:bg-violet-500/10
+                transition hover:scale-105">
+        🎼 Explore Music
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <p class="mt-12 text-sm text-gray-500 dark:text-gray-500">
+      © 2025 GrowwBand · Music Beyond Limits
+    </p>
+
+  </div>
+
+</body>
+</html>

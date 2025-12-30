@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en" class="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Music Artistry Site — Violet & Blue Theme</title>
+      <link rel="icon" href="growwpark_logo.jpg">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: '#7F00FF',
+            blue: '#00C2FF',
+            deep: '#0A0F1F',
+            soft: '#F5F7FA'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="·.¸¸.·♩♪♫ Font Style ♫♪♩·.¸¸.·" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .artist-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+    .artist-img { filter: grayscale(100%); transition: all 0.5s ease; }
+   
+  [dir="rtl"] #mobile-menu {
+    direction: rtl;
+  }
+
+/* ===============================
+   COMPLETE RTL SOLUTION FOR BOTH DESKTOP & MOBILE
+================================ */
+
+/* NAVBAR CONTAINER - Works for both desktop and mobile */
+[dir="rtl"] nav > .max-w-7xl {
+  flex-direction: row-reverse;
+}
+
+/* LOGO - Move to right in RTL */
+[dir="rtl"] nav > .max-w-7xl > a:first-child {
+  order: 2;
+  margin-left: auto;
+}
+
+/* DESKTOP MENU (md: and up) */
+@media (min-width: 768px) {
+  [dir="rtl"] #navbar-default > ul {
+    flex-direction: row-reverse;
+  }
+  
+  [dir="rtl"] #navbar-default {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  /* Desktop dropdown positioning */
+  [dir="rtl"] #homeMenu {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right;
+  }
+  
+  [dir="rtl"] #dashMenu {
+    right: auto !important;
+    left: 0 !important;
+    text-align: right;
+  }
+}
+
+/* MOBILE MENU */
+[dir="rtl"] #mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .mobile-toggle {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .arrow {
+  transform: rotate(180deg);
+  order: -1;
+}
+
+[dir="rtl"] #mobile-menu ul ul {
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
+  text-align: right;
+}
+
+/* Mobile hamburger button stays on left in RTL */
+[dir="rtl"] #menu-btn {
+  order: 1;
+}
+/* DEBUG STYLES - Remove after confirming RTL works */
+[dir="rtl"] nav > .max-w-7xl {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+[dir="rtl"] #mobile-menu {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+@media (max-width:800px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:800px){
+.register{
+  display:none;
+}
+}
+@media (max-width: 800px) {
+    #menu-btn {
+        display: block;
+        margin-left:450px;
+    }
+}
+@media (max-width: 800px) {
+    #rtl-toggle {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    #theme-toggle {
+        display: none;
+    }
+}
+@media (max-width: 1280px) {
+    .list li{
+        display: none !important;
+    }
+}
+@media (max-width: 1280px) {
+    .menu{
+       list-style-type: none;
+      margin-right: 50px;
+    }
+}
+@media (max-width:820px){
+#navbar-default{
+  display:none;
+}
+}
+@media (max-width:1440px){
+.links ul {
+  display:none;
+}
+}
+@media (max-width:1280px){
+    #navbar-default{
+        gap:17px;
+    }
+}
+@media (max-width:1024px){
+#navbar-default {
+  font-size: 11px;
+    gap: 15px;
+}
+}
+  .nav-active {
+    color: #7c3aed; /* violet-600 */
+    font-weight: 600;
+  }
+
+  </style>
+</head>
+
+<body class=" pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-arial">
+
+<nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>
+    </a>
+
+    <!-- Hamburger button for mobile -->
+<button
+  id="menuBtn"
+  class="lg:hidden text-violet"
+>
+  ☰
+</button>
+
+    <!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="hidden lg:hidden absolute top-full left-0 w-full"
+>
+      <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
+        
+        <!-- Home submenu -->
+      <!-- Home submenu -->
+<li>
+  <button onclick="toggleSubMenu('homeSub')" class="mobile-toggle w-full flex items-center justify-between">
+    <span class="label">Home</span>
+    <span class="arrow rtl:rotate-180">▼</span>
+  </button>
+  <ul id="homeSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+      <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+  </ul>
+</li>
+
+        <!-- Other menu items -->
+              <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <!-- Dashboard submenu -->
+        <li>
+          <button onclick="toggleSubMenu('dashSub')" class="mobile-toggle w-full flex items-center justify-between">
+            <span class="label">Dashboard</span>
+            <span class="arrow">▼</span>
+          </button>
+          <ul id="dashSub" class="hidden mt-2 space-y-2 text-base pl-4 rtl:pl-0 rtl:pr-4">
+                   <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+        <!-- Theme & RTL toggles -->
+        <li>
+          <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            🌙 Dark / Light
+          </button>
+        </li>
+        <li>
+          <button id="mobile-rtl-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
+            RTL / LTR
+          </button>
+        </li>
+
+        <!-- New Sign Up & Login buttons for mobile -->
+        <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+         <a href="register.html">Register</a>
+          </button>
+        </li>
+          <li>
+          <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
+         <a href="login.html">Login</a>
+          </button>
+        </li>
+       
+        
+
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="menu hidden md:flex items-center list-none gap-6" id="navbar-default">
+<ul class="list hidden lg:flex gap-4">
+  <!-- <li>Home</li>
+  <li>About</li> -->
+</ul>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('homeMenu')" class="hover:text-violet transition flex items-center gap-1">Home ▼</button>
+          <ul id="homeMenu" class="hidden absolute left-0 mt-3 w-40 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="index.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 1</a></li>
+            <li><a href="home2.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Home 2</a></li>
+          </ul>
+        </li>
+ <li><a href="about.html" class="hover:text-violet transition">About</a></li>
+        <li><a href="pricing.html" class="hover:text-violet transition">Pricing</a></li>
+        <li><a href="blog.html" class="hover:text-violet transition">Blog</a></li>
+        <li><a href="programs.html" class="hover:text-violet transition">Programs</a></li>
+        <li><a href="FAQ.html" class="hover:text-violet transition">FAQ</a></li>
+        <li><a href="contact.html" class="hover:text-violet transition">Contact</a></li>
+
+        <li class="relative">
+          <button onclick="toggleDropdown('dashMenu')" class="hover:text-violet transition flex items-center gap-1">Dashboard ▼</button>
+          <ul id="dashMenu" class="hidden absolute right-0 mt-3 w-44 bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg">
+            <li><a href="user.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">User</a></li>
+            <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <!-- Theme & RTL toggles -->
+      <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1">🌙</button>
+      <button id="rtl-toggle" class="text-xs uppercase border px-2 py-1 rounded hover:bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:text-white dark:hover:bg-white dark:hover:text-black">RTL/LTR</button>
+
+      <!-- New Sign Up & Login buttons for desktop -->
+      <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Register</a>
+      <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+    
+    <style>
+        :root {
+            --primary: #7F00FF;
+            --secondary: #d186e6;
+            --accent: #FF00CC;
+        }
+        
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .font-display {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .music-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .music-gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, var(--accent) 0%, #FF6B9D 100%);
+        }
+        
+        .accent-gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, #FF6B9D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-card {
+            box-shadow: 0 20px 40px rgba(127, 0, 255, 0.15);
+        }
+        
+        .dark .glow-card {
+            box-shadow: 0 20px 40px rgba(127, 0, 255, 0.25);
+        }
+        
+        .pricing-card {
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-15px);
+        }
+        
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, var(--accent) 0%, #FF6B9D 100%);
+            color: white;
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: 800;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 0, 204, 0.3);
+        }
+        
+        .price-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(127, 0, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(127, 0, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(127, 0, 255, 0); }
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 70px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        #billing-toggle:checked + .toggle-switch::before {
+            transform: translateX(38px);
+        }
+        
+        .music-wave {
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(127, 0, 255, 0.1) 20%, 
+                rgba(0, 194, 255, 0.1) 50%, 
+                rgba(127, 0, 255, 0.1) 80%, 
+                transparent 100%);
+            height: 2px;
+        }
+        
+        .comparison-row:hover {
+            background: rgba(127, 0, 255, 0.05);
+        }
+        
+        .dark .comparison-row:hover {
+            background: rgba(127, 0, 255, 0.1);
+        }
+        
+        .faq-card {
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            border-left-color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(127, 0, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .dark .testimonial-card::before {
+            color: rgba(127, 0, 255, 0.2);
+        }
+        
+        .note-icon {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, rgba(127, 0, 255, 0.1) 0%, rgba(0, 194, 255, 0.1) 100%);
+            border-radius: 20px;
+            padding: 30px;
+        }
+        
+        .dark .stats-card {
+            background: linear-gradient(135deg, rgba(127, 0, 255, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 640px) {
+            .popular-badge {
+                right: -45px;
+                font-size: 10px;
+                padding: 6px 35px;
+            }
+            
+            .price-display {
+                font-size: 3rem !important;
+            }
+            
+            .pricing-card {
+                margin: 0 1rem;
+            }
+        }
+        
+        /* Tablet Responsive */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr !important;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+    
+
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20 px-4 sm:px-6">
+        
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto mb-16 sm:mb-24 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 mb-6">
+                <i class="fas fa-guitar text-purple-600 dark:text-purple-400"></i>
+                <span class="font-medium text-purple-700 dark:text-purple-300">PRICING PLANS</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+                <span class="music-gradient-text">Elevate Your Sound</span><br>
+                <span class="text-gray-700 dark:text-gray-300">With Perfect Pricing</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-10">
+                Choose the plan that matches your musical journey. From solo artists to professional bands, 
+                we have everything you need to create, perform, and succeed.
+            </p>
+            
+            <!-- Billing Toggle -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+                <div class="flex items-center gap-4">
+                    <span class="text-lg font-semibold">Monthly</span>
+                 
+                    
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-semibold">Annual</span>
+                        <span class="accent-gradient text-white text-xs font-bold px-3 py-1 rounded-full">
+                            SAVE 20%
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <i class="fas fa-info-circle text-purple-600 dark:text-purple-400"></i>
+                    <span>Switch anytime • Cancel anytime</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="max-w-7xl mx-auto mb-16 sm:mb-24">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="stats-card text-center">
+                    <div class="text-4xl font-display font-bold music-gradient-text mb-2">2,500+</div>
+                    <div class="text-gray-600 dark:text-gray-400">Musicians Thriving</div>
+                </div>
+                <div class="stats-card text-center">
+                    <div class="text-4xl font-display font-bold music-gradient-text mb-2">98%</div>
+                    <div class="text-gray-600 dark:text-gray-400">Satisfaction Rate</div>
+                </div>
+                <div class="stats-card text-center">
+                    <div class="text-4xl font-display font-bold music-gradient-text mb-2">24/7</div>
+                    <div class="text-gray-600 dark:text-gray-400">Artist Support</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="max-w-7xl mx-auto mb-20 sm:mb-32">
+            <div class="grid pricing-grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+                
+                <!-- Solo Artist Plan -->
+                <div class="pricing-card bg-white dark:bg-gray-800 rounded-3xl p-8 glow-card">
+                    <div class="text-center mb-8">
+                        <div class="note-icon inline-flex mb-6">
+                            <i class="fas fa-user">🧑‍🎤</i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-3">Solo Artist</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Perfect for individual musicians</p>
+                        
+                        <div class="mb-6">
+                            <div class="price-display text-5xl font-display font-bold music-gradient-text mb-2">
+                                <span class="monthly-price">$19</span>
+                                <span class="annual-price hidden">$15</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">per month</p>
+                        </div>
+                        
+                        <button class="w-full py-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300">
+                            Start Free Trial
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="font-display text-lg font-bold mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">Features Included</h4>
+                        <div class="flex items-start gap-3">
+                                
+                           
+                            <div>
+                                <span class="font-medium">Basic Music Production</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">5 tracks per month</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                           
+                            <div>
+                                <span class="font-medium">Standard Mixing</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Up to 4 instruments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          
+                            <div>
+                                <span class="font-medium">3 Platform Distribution</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Spotify, Apple, YouTube</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 opacity-60">
+                           
+                    </div>
+                    </div>
+                </div>
+                
+                <!-- Band Plan (Most Popular) -->
+                <div class="pricing-card bg-white dark:bg-gray-800 rounded-3xl p-8 glow-card relative overflow-hidden border-2 border-purple-500/30">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    
+                    <div class="text-center mb-8">
+                        <div class="note-icon inline-flex mb-6 accent-gradient">
+                            <i class="fas fa-users">🥁</i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-3">Pro Band</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">For serious bands & groups</p>
+                        
+                        <div class="mb-6">
+                            <div class="price-display text-5xl font-display font-bold music-gradient-text mb-2">
+                                <span class="monthly-price">$49</span>
+                                <span class="annual-price hidden">$39</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">per month • Billed annually</p>
+                        </div>
+                        
+                        <button class="w-full py-3 music-gradient text-white rounded-xl font-semibold hover:opacity-90 transition duration-300 shadow-lg shadow-purple-500/30">
+                            Start Free Trial
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="font-display text-lg font-bold mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">All Solo features, plus:</h4>
+                        <div class="flex items-start gap-3">
+                          
+                            <div>
+                                <span class="font-medium">Advanced Production Suite</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Unlimited tracks</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          
+                            <div>
+                                <span class="font-medium">Professional Mastering</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Studio quality</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          
+                            <div>
+                                <span class="font-medium">Live Performance Coaching</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">4 sessions/month</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          
+                           </div>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="pricing-card bg-white dark:bg-gray-800 rounded-3xl p-8 glow-card">
+                    <div class="text-center mb-8">
+                        <div class="note-icon inline-flex mb-6">
+                            <i class="fas fa-crown">💸</i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold mb-3">Enterprise</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">For labels & large organizations</p>
+                        
+                        <div class="mb-6">
+                            <div class="price-display text-5xl font-display font-bold music-gradient-text mb-2">
+                                <span class="monthly-price">$99</span>
+                                <span class="annual-price hidden">$79</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400">per month • Custom billing</p>
+                        </div>
+                        
+                        <button class="w-full py-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300">
+                            Contact Sales
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="font-display text-lg font-bold mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">All Band features, plus:</h4>
+                        <div class="flex items-start gap-3">
+                          
+                            <div>
+                                <span class="font-medium">Dedicated Artist Manager</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Personal guidance</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                         
+                            <div>
+                                <span class="font-medium">Custom Sound Design</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Tailored to your style</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                          
+                            <div>
+                                <span class="font-medium">Priority 24/7 Support</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Direct line to experts</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                           
+                            
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Wave Divider -->
+        <div class="max-w-7xl mx-auto my-16">
+            <div class="music-wave"></div>
+        </div>
+
+        <!-- Feature Comparison -->
+        <section class="max-w-7xl mx-auto mb-20 sm:mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+                    Compare <span class="music-gradient-text">All Features</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    See exactly what you get with each plan to make the perfect choice for your music career
+                </p>
+            </div>
+            
+            <div class="overflow-x-auto rounded-2xl shadow-xl">
+                <table class="w-full bg-white dark:bg-gray-800">
+                    <thead>
+                        <tr class="music-gradient text-white">
+                            <th class="p-6 text-left rounded-tl-2xl">
+                                <span class="font-display text-lg">Feature Categories</span>
+                            </th>
+                            <th class="p-6 text-center">
+                                <span class="font-display">Solo Artist</span>
+                            </th>
+                            <th class="p-6 text-center accent-gradient">
+                                <span class="font-display">Pro Band</span>
+                            </th>
+                            <th class="p-6 text-center rounded-tr-2xl">
+                                <span class="font-display">Enterprise</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Production -->
+                        <tr class="comparison-row">
+                            <td class="p-6 font-semibold border-b border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-sliders-h text-purple-600 dark:text-purple-400"></i>
+                                    <span>Music Production</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <div class="inline-flex flex-col items-center">
+                                    <i class="fas fa-check text-green-500 text-xl mb-1"></i>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Basic Tools</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700 accent-gradient/10">
+                                <div class="inline-flex flex-col items-center">
+                                    <i class="fas fa-check text-green-500 text-xl mb-1"></i>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Advanced Suite</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <div class="inline-flex flex-col items-center">
+                                    <i class="fas fa-check text-green-500 text-xl mb-1"></i>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Premium Suite</span>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <!-- Distribution -->
+                        <tr class="comparison-row">
+                            <td class="p-6 font-semibold border-b border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-globe text-purple-600 dark:text-purple-400"></i>
+                                    <span>Music Distribution</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <span class="font-medium">3 Platforms</span>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700 accent-gradient/10">
+                                <span class="font-medium">15+ Platforms</span>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <span class="font-medium">100+ Platforms</span>
+                            </td>
+                        </tr>
+                        
+                        <!-- Coaching -->
+                        <tr class="comparison-row">
+                            <td class="p-6 font-semibold border-b border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-chalkboard-teacher text-purple-600 dark:text-purple-400"></i>
+                                    <span>Live Coaching</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <i class="fas fa-times text-red-500 text-xl">-</i>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700 accent-gradient/10">
+                                <span class="font-medium">4 Sessions/Month</span>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <span class="font-medium">Unlimited</span>
+                            </td>
+                        </tr>
+                        
+                        <!-- Support -->
+                        <tr class="comparison-row">
+                            <td class="p-6 font-semibold border-b border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-headset text-purple-600 dark:text-purple-400"></i>
+                                    <span>Support</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <span class="font-medium">Email (48h)</span>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700 accent-gradient/10">
+                                <span class="font-medium">Chat & Email (24h)</span>
+                            </td>
+                            <td class="p-6 text-center border-b border-gray-200 dark:border-gray-700">
+                                <span class="font-medium">Priority 24/7</span>
+                            </td>
+                        </tr>
+                        
+                        <!-- Team Size -->
+                        <tr class="comparison-row">
+                            <td class="p-6 font-semibold">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-users text-purple-600 dark:text-purple-400"></i>
+                                    <span>Team Members</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="font-medium">1</span>
+                            </td>
+                            <td class="p-6 text-center accent-gradient/10">
+                                <span class="font-medium">Up to 5</span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="font-medium">Unlimited</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        
+
+        <!-- FAQ -->
+        <section class="max-w-7xl mx-auto mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+                    <span class="music-gradient-text">Common Questions</span> Answered
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Everything you need to know about our pricing and plans
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="faq-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-start gap-4">
+                      
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Can I change plans later?</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Yes! You can upgrade or downgrade anytime. Upgrades take effect immediately, while downgrades wait until your current billing cycle ends.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-start gap-4">
+                      
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Do you offer student discounts?</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Yes! Students get 40% off all plans. Verify your student status with your .edu email or student ID to get the discount applied.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-start gap-4">
+                      
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">What payment methods do you accept?</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                We accept all major credit cards, PayPal, Apple Pay, Google Pay, and bank transfers for annual plans. All payments are secure and encrypted.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-start gap-4">
+                      
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Is there a free trial?</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Yes! All plans include a 14-day free trial with full access to all features. No credit card required to start your trial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="max-w-7xl mx-auto text-center">
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl p-8 sm:p-12">
+                <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-gray-800 mb-8 shadow-lg">
+                    <i class="fas fa-music text-purple-600 dark:text-purple-400"></i>
+                    <span class="font-bold">READY TO ELEVATE YOUR MUSIC?</span>
+                </div>
+                
+                <h2 class="text-3xl sm:text-5xl font-display font-bold mb-6">
+                    Start Your <span class="music-gradient-text">14-Day Free Trial</span> Today
+                </h2>
+                
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Join thousands of artists creating amazing music with our platform. No credit card required, cancel anytime.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 music-gradient text-white rounded-xl font-bold text-lg hover:opacity-90 transition duration-300 shadow-xl shadow-purple-500/30 hover:scale-105">
+                        Start Free Trial
+                    </button>
+                    <button class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-xl font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 shadow-xl hover:scale-105 border-2 border-gray-200 dark:border-gray-700">
+                       <a href="pricedetails.html"> View Pricing Details</a>
+                    </button>
+                </div>
+                
+                <p class="mt-8 text-gray-600 dark:text-gray-400 text-sm">
+                    <i class="fas fa-shield-alt mr-2 text-green-500"></i>
+                    Secure payment • 30-day money-back guarantee • No long-term contracts
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Theme Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const html = document.documentElement;
+            
+            // Set theme function
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    html.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            }
+            
+       
+            
+            // Toggle theme on click
+            themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.contains('dark');
+                setTheme(isDark ? 'dark' : 'light');
+            });
+            
+            // Billing Toggle
+            const billingToggle = document.getElementById('billing-toggle');
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const annualPrices = document.querySelectorAll('.annual-price');
+            
+            billingToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Show annual prices
+                    monthlyPrices.forEach(el => el.classList.add('hidden'));
+                    annualPrices.forEach(el => el.classList.remove('hidden'));
+                } else {
+                    // Show monthly prices
+                    monthlyPrices.forEach(el => el.classList.remove('hidden'));
+                    annualPrices.forEach(el => el.classList.add('hidden'));
+                }
+            });
+            
+            // Initialize billing toggle
+            billingToggle.checked = true;
+            billingToggle.dispatchEvent(new Event('change'));
+            
+            // System theme listener
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    setTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+            
+            // Add hover animations to buttons
+            const buttons = document.querySelectorAll('button, a[href="#"]');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe cards for animation
+            document.querySelectorAll('.pricing-card, .testimonial-card, .faq-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-white pt-20 pb-10 px-6" dir="ltr">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+    
+    <!-- Newsletter / Sign Up -->
+    <div>
+  <span class="me-auto flex items-center gap-2 px-4 py-2">
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
+        <span class="w-1 h-6 bg-violet/40"></span>
+        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+      </span>      <p class="text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
+
+      <form class="flex flex-col sm:flex-row gap-4 rtl:flex-row-reverse">
+        <input type="email" placeholder="ENTER YOUR EMAIL"
+          class="bg-transparent border-2 border-white placeholder-white/60 px-6 py-4 outline-none focus:bg-white/5 w-full font-bold text-white">
+        <button type="submit"
+          class="bg-white text-violet px-8 py-4 font-bold uppercase hover:bg-blue hover:text-white transition-colors whitespace-nowrap">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-14 gap-10 rtl:text-right">
+      
+      <ul class="space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About</a></li>
+        <li><a href="programs.html" class="hover:underline">Programs</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Instagram</a></li>
+        <li><a href="#" class="hover:underline">Twitter</a></li>
+        <li><a href="#" class="hover:underline">TikTok</a></li>
+        <li><a href="#" class="hover:underline">Youtube</a></li>
+      </ul>
+
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:underline">Concert</a></li>
+        <li><a href="#" class="hover:underline">Press Kit</a></li>
+        <li><a href="#" class="hover:underline">Privacy</a></li>
+        <li><a href="#" class="hover:underline">Bookings</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-wider rtl:text-right">
+    <span>&copy; 2025 The Groww-Band Music Group.</span>
+  </div>
+</footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  
+  // SINGLE FUNCTION FOR RTL TOGGLE
+  function toggleRTL() {
+    const isRTL = html.getAttribute('dir') === 'rtl';
+    
+    if (isRTL) {
+      // Switch to LTR
+      html.setAttribute('dir', 'ltr');
+      html.setAttribute('lang', 'en');
+    } else {
+      // Switch to RTL
+      html.setAttribute('dir', 'rtl');
+      html.setAttribute('lang', 'ar');
+    }
+    
+    // Save preference
+    localStorage.setItem('dir', html.getAttribute('dir'));
+    
+    // Force redraw for mobile menu if it's open
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.style.display = 'none';
+      setTimeout(() => {
+        mobileMenu.style.display = '';
+      }, 10);
+    }
+  }
+  
+  // FIXED THEME TOGGLE FUNCTION
+  function toggleTheme() {
+    // Check if dark class exists
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    if (isDark) {
+      // Switch to light mode
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    } else {
+      // Switch to dark mode
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+    
+    // Alternative: If using data-theme attribute
+    // const currentTheme = html.getAttribute('data-theme');
+    // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // html.setAttribute('data-theme', newTheme);
+    // localStorage.setItem('theme', newTheme);
+    
+    // Save theme preference
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  }
+  
+  // ===== EVENT LISTENERS =====
+  
+  // Desktop RTL toggle
+  document.getElementById('rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Mobile RTL toggle
+  document.getElementById('mobile-rtl-toggle')?.addEventListener('click', toggleRTL);
+  
+  // Desktop theme toggle
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // Mobile theme toggle
+  document.getElementById('mobile-theme-toggle')?.addEventListener('click', toggleTheme);
+  
+  // ===== RESTORE SAVED SETTINGS =====
+  
+  // Restore RTL
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    html.setAttribute('dir', savedDir);
+    html.setAttribute('lang', savedDir === 'rtl' ? 'ar' : 'en');
+  }
+  
+  // Restore theme - FIXED
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    // Remove both classes first
+    document.documentElement.classList.remove('dark', 'light');
+    
+    // Add the saved theme class
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  } else {
+    // Default to light if no preference saved
+    document.documentElement.classList.add('light');
+  }
+});
+
+// Mobile menu toggle (separate from RTL)
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  }
+});
+
+// Submenu toggle for mobile
+function toggleSubMenu(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("hidden");
+}
+
+// Dropdown toggle for desktop
+function toggleDropdown(id) {
+  document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+    if (menu.id !== id) menu.classList.add('hidden');
+  });
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('li')) {
+    document.querySelectorAll('ul[id$="Menu"]').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+</script>
+
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        violet: '#7F00FF',
+        blue: '#00C2FF',
+        deep: '#0A0F1F',
+        soft: '#F5F7FA'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
+      }
+    }
+  }
+  // REMOVE the RTL plugin - we'll handle it with CSS instead
+}
+</script>
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll("nav a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+
+      // If link is inside dropdown → activate parent button
+      const dropdown = link.closest("ul");
+      if (dropdown && dropdown.previousElementSibling?.tagName === "BUTTON") {
+        dropdown.previousElementSibling.classList.add("nav-active");
+      }
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>

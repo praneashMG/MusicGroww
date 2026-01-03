@@ -20,7 +20,7 @@
             soft: '#F5F7FA'
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Inter', 'Arial', 'sans-serif'],
             display: ['Oswald', 'sans-serif'],
           }
         }
@@ -29,6 +29,13 @@
   </script>
 
   <style>
+    /* Smooth transitions for theme switching */
+    * {
+      transition-property: background-color, border-color, color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    
     html { scroll-behavior: smooth; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -107,14 +114,7 @@
 [dir="rtl"] #menu-btn {
   order: 1;
 }
-/* DEBUG STYLES - Remove after confirming RTL works */
-[dir="rtl"] nav > .max-w-7xl {
-  background-color: rgba(255, 0, 0, 0.1);
-}
 
-[dir="rtl"] #mobile-menu {
-  background-color: rgba(0, 255, 0, 0.1);
-}
 @media (max-width:800px){
 #navbar-default{
   display:none;
@@ -125,10 +125,11 @@
   display:none;
 }
 }
+/* FIXED: Changed #menu-btn to #menuBtn to match button ID */
 @media (max-width: 800px) {
-    #menu-btn {
+    #menuBtn {
         display: block;
-        margin-left:450px;
+        margin-left: 0;
     }
 }
 @media (max-width: 800px) {
@@ -173,15 +174,120 @@
     gap: 15px;
 }
 }
+
   .nav-active {
     color: #7c3aed;
     font-weight: 600;
   }
 
+  /* Ensure dark mode transitions work properly */
+  body, nav, footer, main, div, section, article {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Fix for any elements that might not be inheriting dark mode styles */
+  .dark * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Ensure text colors work in dark mode */
+  .dark .text-gray-600 {
+    color: #9ca3af;
+  }
+
+  .dark .text-gray-500 {
+    color: #6b7280;
+  }
+
+  .dark .text-gray-400 {
+    color: #9ca3af;
+  }
+
+  .dark .text-gray-300 {
+    color: #d1d5db;
+  }
+
+  .dark .text-gray-200 {
+    color: #e5e7eb;
+  }
+
+  /* Fix for blog cards in dark mode */
+  .dark .blog-card {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  /* Fix for music notes visibility in dark mode */
+  .dark .music-note {
+    color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Fix for gradient text in dark mode */
+  .dark .gradient-text {
+    background: linear-gradient(90deg, #c159ea, #c4b5fd, #f0abfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Fix for buttons in dark mode */
+  .dark button:not(.gradient-bg) {
+    background-color: #374151;
+    color: #f3f4f6;
+  }
+
+  .dark .bg-white {
+    background-color: #1f2937;
+  }
+
+  .dark .bg-gray-100 {
+    background-color: #374151;
+  }
+
+  .dark .bg-gray-800 {
+    background-color: #111827;
+  }
+
+  .dark .border-black\/10 {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .border-white\/10 {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* FIXED: Mobile menu styles */
+  #mobileMenu {
+    z-index: 40;
+  }
+
+  #menuBtn {
+    cursor: pointer;
+    z-index: 50;
+  }
+
+  /* Ensure mobile menu has proper height */
+  #mobileMenu ul {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Fix for the hamburger button position on mobile */
+  @media (max-width: 800px) {
+    #menuBtn {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin-left: 0;
+    }
+  }
+
   </style>
 </head>
 
-<body class="pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-arial">
+<body class="pt-[72px] bg-soft text-deep dark:bg-deep dark:text-soft transition-colors duration-300 font-sans">
 
 <nav class="fixed w-full z-50 top-0 start-0 border-b border-black/10 dark:border-white/10 backdrop-blur-md bg-white/70 dark:bg-black/70">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -189,23 +295,21 @@
     <!-- Logo -->
     <a href="index.html" class="flex items-center">
       <span class="me-auto flex items-center gap-2 px-4 py-2">
-        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
-        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">GrowwBand</span>
       </span>
     </a>
 
-    <!-- Hamburger button for mobile -->
+    <!-- Hamburger button for mobile - FIXED -->
 <button
   id="menuBtn"
-  class="lg:hidden text-violet"
+  class="lg:hidden text-violet text-2xl z-50"
 >
   ☰
 </button>
 
-    <!-- Mobile Menu -->
 <div
   id="mobileMenu"
-  class="hidden lg:hidden absolute top-full left-0 w-full"
+  class="hidden lg:hidden fixed top-16 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-40"
 >
       <ul class="flex flex-col py-6 px-6 space-y-5 text-lg bg-white text-black dark:bg-black dark:text-white">
         
@@ -241,6 +345,7 @@
             <li><a href="admin.html" class="block px-4 py-2 hover:bg-violet/10 hover:text-violet">Admin</a></li>
           </ul>
         </li>
+
         <!-- Theme & RTL toggles -->
         <li>
           <button id="mobile-theme-toggle" class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black dark:bg-gray-800 dark:text-white">
@@ -259,7 +364,7 @@
          <a href="register.html">Register</a>
           </button>
         </li>
-           <li>
+         <li>
           <button class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white font-bold">
          <a href="login.html">Login</a>
           </button>
@@ -300,7 +405,7 @@
           </ul>
         </li>
 
-      </ul>
+   
 
       <!-- Theme & RTL toggles -->
       <button id="theme-toggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 border px-2 py-1">🌙</button>
@@ -308,18 +413,12 @@
 
       <!-- New Sign Up & Login buttons for desktop -->
       <a href="register.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Register</a>
-      <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
+            <a href="login.html" class=" register px-5 py-2 rounded-lg bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white text-sm hover:-translate-y-0.5 transition">Login</a>
 
     </div>
   </div>
 </nav>
 
-   <script>
-    tailwind.config = {
-        darkMode: 'class',
-    }
-</script>
-    
     <style>
         .font-title {
             font-family: 'Roboto Slab', serif;
@@ -436,7 +535,7 @@
                                     <p class="font-medium">Alex Morgan</p>
                                     <p class="text-sm text-white/80">Lead Producer at Groww Studios</p>
                                 </div>
-                                <a href="#" class="ml-auto bg-white text-purple-700 px-5 py-2 rounded-full font-medium hover:bg-gray-100 transition read-more-btn">Read Article</a>
+                                <a href="blogdetails.html" class="ml-auto bg-white text-purple-700 px-5 py-2 rounded-full font-medium hover:bg-gray-100 transition read-more-btn">Read Article</a>
                             </div>
                         </div>
                     </div>
@@ -740,9 +839,7 @@
     <!-- Newsletter / Sign Up -->
     <div>
   <span class="me-auto flex items-center gap-2 px-4 py-2">
-        <span class="text-xl font-extrabold font-display text-violet tracking-wide">Groww</span>
-        <span class="w-1 h-6 bg-violet/40"></span>
-        <span class="text-xl font-semibold font-display text-gray-800 dark:text-gray-200 tracking-wide">Band</span>
+        <span class="text-xl font-extrabold font-display text-violet tracking-wide">GrowwBand</span>
       </span>
             <p class="text-lg font-medium mb-8 max-w-md rtl:text-right">Get early access to tickets, exclusive vinyl drops, and secret show announcements.</p>
 
@@ -789,7 +886,7 @@
   </div>
 </footer>
 
-<!-- Replace the problematic script at the end with this -->
+<!-- CORRECTED DARK MODE SCRIPT -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
@@ -799,10 +896,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Restore Theme - DEFAULT TO LIGHT
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
-    html.classList.remove('light');
     html.classList.add('dark');
+    html.classList.remove('light');
     // Update theme toggle buttons if they exist
-    const themeToggles = document.querySelectorAll('[id*="theme-toggle"]');
+    const themeToggles = document.querySelectorAll('[id*="theme-toggle"], #mobile-theme-toggle');
     themeToggles.forEach(btn => {
       btn.textContent = '☀️'; // Sun for dark mode
     });
@@ -811,7 +908,7 @@ document.addEventListener("DOMContentLoaded", () => {
     html.classList.remove('dark');
     html.classList.add('light');
     // Update theme toggle buttons if they exist
-    const themeToggles = document.querySelectorAll('[id*="theme-toggle"]');
+    const themeToggles = document.querySelectorAll('[id*="theme-toggle"], #mobile-theme-toggle');
     themeToggles.forEach(btn => {
       btn.textContent = '🌙'; // Moon for light mode
     });
@@ -839,7 +936,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem('theme', 'light');
       
       // Update theme toggle buttons
-      const themeToggles = document.querySelectorAll('[id*="theme-toggle"]');
+      const themeToggles = document.querySelectorAll('[id*="theme-toggle"], #mobile-theme-toggle');
       themeToggles.forEach(btn => {
         btn.textContent = '🌙';
       });
@@ -850,7 +947,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem('theme', 'dark');
       
       // Update theme toggle buttons
-      const themeToggles = document.querySelectorAll('[id*="theme-toggle"]');
+      const themeToggles = document.querySelectorAll('[id*="theme-toggle"], #mobile-theme-toggle');
       themeToggles.forEach(btn => {
         btn.textContent = '☀️';
       });
@@ -891,17 +988,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<!-- FIXED HAMBURGER MENU SCRIPT -->
 <script>
-// Mobile menu toggle (separate from RTL)
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
+// Simple hamburger menu toggle that will definitely work
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      document.body.classList.toggle("overflow-hidden");
+    console.log('Menu elements found, adding click listener...');
+    
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('Menu button clicked!');
+      
+      // Toggle the menu
+      mobileMenu.classList.toggle('hidden');
+      
+      // Change hamburger icon
+      if (mobileMenu.classList.contains('hidden')) {
+        menuBtn.innerHTML = '☰';
+      } else {
+        menuBtn.innerHTML = '✕';
+      }
     });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!mobileMenu.contains(e.target) && e.target !== menuBtn && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        menuBtn.innerHTML = '☰';
+      }
+    });
+    
+    // Prevent mobile menu from closing when clicking inside it
+    mobileMenu.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  } else {
+    console.log('Menu elements not found:', { menuBtn, mobileMenu });
   }
 });
 
@@ -927,9 +1052,8 @@ document.addEventListener('click', (e) => {
     });
   }
 });
-</script>
 
-<script>
+// Active navigation
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop();
 
@@ -947,15 +1071,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-</script>
-
-<script>
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("mobileMenu");
-
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
 </script>
 
 </body>
